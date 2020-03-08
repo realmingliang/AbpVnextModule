@@ -6,8 +6,8 @@
     <PackageIconUrl></PackageIconUrl>
     <PackageProjectUrl></PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <RepositoryType></RepositoryType>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/xiaoliang1314/AbpVnextModule/</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
