@@ -3,8 +3,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>Tudou.Abp.AudotLogging.HttpApi</AssemblyName>
-    <PackageId>Tudou.Abp.AudotLogging.HttpApi</PackageId>
+    <AssemblyName>Tudou.Abp.AuditLogging.HttpApi</AssemblyName>
+    <PackageId>Tudou.Abp.AuditLogging.HttpApi</PackageId>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
