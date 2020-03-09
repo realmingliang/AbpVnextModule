@@ -11,3 +11,7 @@
 - Tudou.Abp.AuditLogging.HttpApi
 - Tudou.Abp.AuditLogging.HttpApi.Client
 - Tudou.Abp.AuditLogging.MongoDB
+
+
+<img src="https://github.com/xiaoliang1314/AbpVnextModule/blob/master/modules/audit-logging/page.png?raw=true">
+<img src="https://github.com/xiaoliang1314/AbpVnextModule/blob/master/modules/audit-logging/detail.png?raw=true">
