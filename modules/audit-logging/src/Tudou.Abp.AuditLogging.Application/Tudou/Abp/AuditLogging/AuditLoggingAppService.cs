@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 
 namespace Tudou.Abp.AuditLogging
 {
+    [Authorize]
     public class AuditLoggingAppService : AuditLoggingAppServiceBase, IAuditLoggingAppService
     {
         private readonly IAuditLogRepository _auditLogRepository;

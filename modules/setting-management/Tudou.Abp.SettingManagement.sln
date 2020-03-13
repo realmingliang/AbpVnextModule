@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.Domain.Shared", "src\Tudou.Abp.SettingManagement.Domain.Shared\Tudou.Abp.SettingManagement.Domain.Shared.csproj", "{3A607A96-8248-4027-9A96-44145A84B210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.Domain", "src\Tudou.Abp.SettingManagement.Domain\Tudou.Abp.SettingManagement.Domain.csproj", "{5236093A-E52E-4D50-89B3-09591D35C2FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.EntityFrameworkCore", "src\Tudou.Abp.SettingManagement.EntityFrameworkCore\Tudou.Abp.SettingManagement.EntityFrameworkCore.csproj", "{10A31B5C-B772-4F78-94A9-FE49A15D068D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.MongoDB", "src\Tudou.Abp.SettingManagement.MongoDB\Tudou.Abp.SettingManagement.MongoDB.csproj", "{7615D255-FB8F-49F0-81C0-F2E69F7F0CB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.Application", "src\Tudou.Abp.SettingManagement.Application\Tudou.Abp.SettingManagement.Application.csproj", "{6BE04480-6E51-4EC9-BAE3-C0E2F30A1992}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.Application.Contracts", "src\Tudou.Abp.SettingManagement.Application.Contracts\Tudou.Abp.SettingManagement.Application.Contracts.csproj", "{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tudou.Abp.SettingManagement.HttpApi.Client", "src\Tudou.Abp.SettingManagement.HttpApi.Client\Tudou.Abp.SettingManagement.HttpApi.Client.csproj", "{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.HttpApi", "src\Tudou.Abp.SettingManagement.HttpApi\Tudou.Abp.SettingManagement.HttpApi.csproj", "{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A607A96-8248-4027-9A96-44145A84B210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A607A96-8248-4027-9A96-44145A84B210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A607A96-8248-4027-9A96-44145A84B210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A607A96-8248-4027-9A96-44145A84B210}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5236093A-E52E-4D50-89B3-09591D35C2FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5236093A-E52E-4D50-89B3-09591D35C2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5236093A-E52E-4D50-89B3-09591D35C2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5236093A-E52E-4D50-89B3-09591D35C2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A31B5C-B772-4F78-94A9-FE49A15D068D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A31B5C-B772-4F78-94A9-FE49A15D068D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A31B5C-B772-4F78-94A9-FE49A15D068D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A31B5C-B772-4F78-94A9-FE49A15D068D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7615D255-FB8F-49F0-81C0-F2E69F7F0CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7615D255-FB8F-49F0-81C0-F2E69F7F0CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7615D255-FB8F-49F0-81C0-F2E69F7F0CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7615D255-FB8F-49F0-81C0-F2E69F7F0CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BE04480-6E51-4EC9-BAE3-C0E2F30A1992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BE04480-6E51-4EC9-BAE3-C0E2F30A1992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BE04480-6E51-4EC9-BAE3-C0E2F30A1992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BE04480-6E51-4EC9-BAE3-C0E2F30A1992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A607A96-8248-4027-9A96-44145A84B210} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{5236093A-E52E-4D50-89B3-09591D35C2FA} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{10A31B5C-B772-4F78-94A9-FE49A15D068D} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{7615D255-FB8F-49F0-81C0-F2E69F7F0CB7} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{6BE04480-6E51-4EC9-BAE3-C0E2F30A1992} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+		{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273} = {F1BE945B-F0CF-4712-BC2B-9AF8C02059EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24B3A486-E7CA-4AA5-B76F-27D351A97E59}
+	EndGlobalSection
+EndGlobal

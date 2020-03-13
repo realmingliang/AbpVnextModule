@@ -18,8 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tudou.Abp.AuditLogging.Application.Contracts\Tudou.Abp.AuditLogging.Application.Contracts.csproj" />
-    <ProjectReference Include="..\Tudou.Abp.AuditLogging.HttpApi\Tudou.Abp.AuditLogging.HttpApi.csproj" />
-  </ItemGroup>
+    <ProjectReference Include="..\Tudou.Abp.AuditLogging.Application.Contracts\Tudou.Abp.AuditLogging.Application.Contracts.csproj" />  </ItemGroup>
 
 </Project>
