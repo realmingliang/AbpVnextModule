@@ -1,9 +1,10 @@
 # SettingManagement设置管理
-测试中暂未发布Nuget
+[![NuGet](https://img.shields.io/nuget/v/Tudou.Abp.Account.Application.svg?style=flat-square)](https://www.nuget.org/packages/Tudou.Abp.Account.Application)
 
 ### 功能
 
-- AbpVnext 组织机构模块
+- AbpVnext 设置管理模块
+- 结合Antd Pro进行界面布局管理
 
 ### Nuget
 
