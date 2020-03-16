@@ -16,3 +16,6 @@
 - Tudou.Abp.SettingManagement.HttpApi
 - Tudou.Abp.SettingManagement.HttpApi.Client
 - Tudou.Abp.SettingManagement.MongoDB  
+
+
+<img src="https://github.com/xiaoliang1314/AbpVnextModule/blob/master/modules/setting-management/page.gif?raw=true">
