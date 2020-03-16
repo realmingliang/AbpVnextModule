@@ -6,7 +6,6 @@
 
         public bool EnableLocalLogin { get; set; }
 
-        public bool IsRememberBrowserEnabled { get; set; }
 
     }
 }

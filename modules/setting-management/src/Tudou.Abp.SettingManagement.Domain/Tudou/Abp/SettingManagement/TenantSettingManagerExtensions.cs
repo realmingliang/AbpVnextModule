@@ -33,7 +33,7 @@ namespace Tudou.Abp.SettingManagement
             return settingManager.SetAsync(name, value, TenantSettingValueProvider.ProviderName, tenantId.ToString(), forceToSet);
         }
 
-        public static Task SetForCurrentTenantAsync(this ISettingManager settingManager, [NotNull] string name, [CanBeNull] string value, bool forceToSet = false)
+        public static Task SetGlobalAsync(this ISettingManager settingManager, [NotNull] string name, [CanBeNull] string value, bool forceToSet = false)
         {
             return settingManager.SetAsync(name, value, TenantSettingValueProvider.ProviderName, null, forceToSet);
         }
