@@ -11,3 +11,5 @@
 
   
 
+应用程序模板:
+https://github.com/xiaoliang1314/AbpVnext-AntdPro
