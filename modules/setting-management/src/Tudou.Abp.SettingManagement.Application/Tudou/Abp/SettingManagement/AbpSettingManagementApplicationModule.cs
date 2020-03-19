@@ -15,5 +15,8 @@ namespace Tudou.Abp.SettingManagement
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
         }
+        
     }
 }
+
+

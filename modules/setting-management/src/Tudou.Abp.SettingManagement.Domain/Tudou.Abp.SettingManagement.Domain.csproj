@@ -16,9 +16,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.SettingManagement.Domain.Shared\Tudou.Abp.SettingManagement.Domain.Shared.csproj" />
 
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.2.1" />
-    <PackageReference Include="Volo.Abp.Settings" Version="2.2.1" />
-    <PackageReference Include="Volo.Abp.Caching" Version="2.2.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.Settings" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="2.3.0" />
   </ItemGroup>
 
 </Project>
