@@ -80,7 +80,7 @@ namespace Tudou.Abp.SettingManagement
                         var providerValue = await provider.GetOrNullAsync(
                             setting,
                             provider.Name == providerName ? providerKey : null
-                        ).ConfigureAwait(false);
+                        );
                         if (providerValue != null)
                         {
                             value = providerValue;
@@ -92,7 +92,7 @@ namespace Tudou.Abp.SettingManagement
                     value = await providerList[0].GetOrNullAsync(
                         setting,
                         providerKey
-                    ).ConfigureAwait(false);
+                    );
                 }
 
                 if (setting.IsEncrypted)
@@ -133,7 +133,7 @@ namespace Tudou.Abp.SettingManagement
 
             if (providers.Count > 1 && !forceToSet && setting.IsInherited && value != null)
             {
-                var fallbackValue = await GetOrNullInternalAsync(name, providers[1].Name, null).ConfigureAwait(false);
+                var fallbackValue = await GetOrNullInternalAsync(name, providers[1].Name, null);
                 if (fallbackValue == value)
                 {
                     //Clear the value if it's same as it's fallback value
@@ -149,14 +149,14 @@ namespace Tudou.Abp.SettingManagement
             {
                 foreach (var provider in providers)
                 {
-                    await provider.ClearAsync(setting, providerKey).ConfigureAwait(false);
+                    await provider.ClearAsync(setting, providerKey);
                 }
             }
             else
             {
                 foreach (var provider in providers)
                 {
-                    await provider.SetAsync(setting, value, providerKey).ConfigureAwait(false);
+                    await provider.SetAsync(setting, value, providerKey);
                 }
             }
         }
@@ -183,7 +183,7 @@ namespace Tudou.Abp.SettingManagement
                 value = await provider.GetOrNullAsync(
                     setting,
                     provider.Name == providerName ? providerKey : null
-                ).ConfigureAwait(false);
+                );
 
                 if (value != null)
                 {

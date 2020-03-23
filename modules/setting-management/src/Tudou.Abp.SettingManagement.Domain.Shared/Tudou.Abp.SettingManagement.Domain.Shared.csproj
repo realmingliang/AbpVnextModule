@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\..\..\common.props" />
-
+  <Import Project="..\..\..\..\configureawait.props" />
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Tudou.Abp.SettingManagement.Domain.Shared</AssemblyName>
@@ -14,8 +14,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Tudou\Abp\SettingManagement\Localization\Resources\AbpSettingManagement\*.json" />
-    <Content Remove="Tudou\Abp\SettingManagement\Localization\Resources\AbpSettingManagement\*.json" />
+     <EmbeddedResource Include="Tudou\Abp\SettingManagement\Localization\*.json" />
+    <Content Remove="Tudou\Abp\SettingManagement\Localization\*.json" />
   </ItemGroup>
 
   <ItemGroup>

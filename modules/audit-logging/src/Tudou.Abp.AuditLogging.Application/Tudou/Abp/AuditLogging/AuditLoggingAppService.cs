@@ -27,7 +27,7 @@ namespace Tudou.Abp.AuditLogging
         {
             var count = await _auditLogRepository.GetCountAsync(null, null, input.HttpMethod, input.Url,
                 input.UserName, input.ApplicationName, input.CorrelationId, input.MaxExecutionDuration,
-                input.MinExecutionDuration, input.HasException, input.HttpStatusCode).ConfigureAwait(false);
+                input.MinExecutionDuration, input.HasException, input.HttpStatusCode);
             var list = await _auditLogRepository.GetListAsync(input.Sorting,
                 input.MaxResultCount, input.SkipCount, null, null, input.HttpMethod, input.Url,
                 input.UserName, input.ApplicationName, input.CorrelationId, input.MaxExecutionDuration,

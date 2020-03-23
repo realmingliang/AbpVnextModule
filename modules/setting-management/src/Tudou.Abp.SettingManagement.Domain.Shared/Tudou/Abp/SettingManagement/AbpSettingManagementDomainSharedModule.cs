@@ -21,7 +21,7 @@ namespace Tudou.Abp.SettingManagement
             {
                 options.Resources
                     .Add<AbpSettingManagementResource>("en")
-                    .AddVirtualJson("/Tudou/Abp/SettingManagement/Localization/Resources/AbpSettingManagement");
+                    .AddVirtualJson("/Tudou/Abp/SettingManagement/Localization");
             });
         }
     }

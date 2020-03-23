@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+  <Import Project="..\..\..\..\configureawait.props" />
   <Import Project="..\..\..\..\common.props" />
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>

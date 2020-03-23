@@ -38,15 +38,24 @@ namespace Tudou.Abp.SettingManagement
 
         public async Task UpdateAllSettingsAsync(UpdateThemeSettingsInput input)
         {
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.NavTheme, input.NavTheme);
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.PrimaryColor, input.PrimaryColor);
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.Layout, input.Layout);
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.ContentWidth, input.ContentWidth);
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.FixedHeader, input.FixedHeader.ToString());
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.AutoHideHeader, input.AutoHideHeader.ToString());
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.FixSiderbar, input.FixSiderbar.ToString());
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.ColorWeak, input.ColorWeak.ToString());
-            await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.Title, input.Title);
+            if (CurrentUser.Id != null)
+            {
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.NavTheme, input.NavTheme);
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.PrimaryColor,
+                    input.PrimaryColor);
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.Layout, input.Layout);
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.ContentWidth,
+                    input.ContentWidth);
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.FixedHeader,
+                    input.FixedHeader.ToString());
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.AutoHideHeader,
+                    input.AutoHideHeader.ToString());
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.FixSiderbar,
+                    input.FixSiderbar.ToString());
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.ColorWeak,
+                    input.ColorWeak.ToString());
+                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.Title, input.Title);
+            }
         }
     }
 }
