@@ -43,6 +43,7 @@ namespace Tudou.Abp.SettingManagement
             return new IdentitySettingsSignInDto()
             {
                 RequireConfirmedEmail = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(IdentitySettingNames.SignIn.RequireConfirmedEmail)),
+                EnablePhoneNumberConfirmation = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(IdentitySettingNames.SignIn.EnablePhoneNumberConfirmation)),
                 RequireConfirmedPhoneNumber = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(IdentitySettingNames.SignIn.RequireConfirmedPhoneNumber)),
             };
         }
@@ -50,14 +51,15 @@ namespace Tudou.Abp.SettingManagement
         {
             return new IdentitySettingsLockOutDto()
             {
-                AllowedForNewUsers = int.Parse(await _settingProvider.GetOrNullAsync(IdentitySettingNames.Lockout.AllowedForNewUsers)),
+                AllowedForNewUsers = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(IdentitySettingNames.Lockout.AllowedForNewUsers)),
                 LockoutDuration = int.Parse(await _settingProvider.GetOrNullAsync(IdentitySettingNames.Lockout.LockoutDuration)),
-                MaxFailedAccessAttempts = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(IdentitySettingNames.Lockout.MaxFailedAccessAttempts)),
+                MaxFailedAccessAttempts = int.Parse(await _settingProvider.GetOrNullAsync(IdentitySettingNames.Lockout.MaxFailedAccessAttempts)),
 
             };
         }
         private async Task<IdentitySettingsPasswordDto> GetPasswordSettingsAsync()
         {
+
             return new IdentitySettingsPasswordDto()
             {
                 RequireDigit = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(IdentitySettingNames.Password.RequireDigit)),

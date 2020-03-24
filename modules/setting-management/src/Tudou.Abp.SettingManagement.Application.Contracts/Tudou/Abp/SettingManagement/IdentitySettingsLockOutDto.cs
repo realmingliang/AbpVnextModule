@@ -6,8 +6,8 @@ namespace Tudou.Abp.SettingManagement
 {
   public  class IdentitySettingsLockOutDto
     {
-        public int AllowedForNewUsers { get; set; }
+        public bool AllowedForNewUsers { get; set; }
         public int LockoutDuration { get; set; }
-        public bool MaxFailedAccessAttempts { get; set; }
+        public int MaxFailedAccessAttempts { get; set; }
     }
 }
