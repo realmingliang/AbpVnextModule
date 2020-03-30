@@ -15,7 +15,4 @@
     <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="2.3.0" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="2.3.0" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Tudou.Abp.SettingManagement.Domain.Shared\Tudou.Abp.SettingManagement.Domain.Shared.csproj" />
-  </ItemGroup>
 </Project>

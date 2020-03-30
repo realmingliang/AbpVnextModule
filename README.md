@@ -7,7 +7,10 @@
 ### 模块列表
 
 - AuditLogging审计日志 
+
 - SettingManagement设置管理 
+
+- Saas租户版本管理
 
   
 

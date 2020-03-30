@@ -1,23 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\..\..\common.props" />
   <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Tudou.Abp.SettingManagement.Domain</AssemblyName>
-    <PackageId>Tudou.Abp.SettingManagement.Domain</PackageId>
+    <AssemblyName>Tudou.Abp.Saas.Application.Contracts</AssemblyName>
+    <PackageId>Tudou.Abp.Saas.Application.Contracts</PackageId>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace />
   </PropertyGroup>
-
+  
   <ItemGroup>
-
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.Settings" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.Caching" Version="2.3.0" />
+    <ProjectReference Include="..\Tudou.Abp.Saas.Domain.Shared\Tudou.Abp.Saas.Domain.Shared.csproj" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="2.3.0" />
   </ItemGroup>
 
 </Project>
