@@ -59,12 +59,6 @@ namespace Tudou.Abp.SettingManagement.ThemeSettings
                    false.ToString(),
                    L("DisplayName:Abp.Theme.ColorWeak"),
                    L("Description:Abp.Theme.ColorWeak"),
-                   true),
-               new SettingDefinition(
-                   ThemeSettingNames.Title,
-                   "Ant Design Pro",
-                   L("DisplayName:Abp.Theme.Title"),
-                   L("Description:Abp.Theme.Title"),
                    true));
         }
         private static LocalizableString L(string name)

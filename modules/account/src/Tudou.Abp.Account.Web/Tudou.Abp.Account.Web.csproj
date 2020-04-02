@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Tudou.Abp.Account.Web</AssemblyName>
+    <PackageId>Tudou.Abp.Account.Web</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace>Tudou.Abp.Account.Web</RootNamespace>
+    <IsPackable>true</IsPackable>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\**\*.cshtml" />
+    <EmbeddedResource Include="Modules\**\*.js" />
+    <EmbeddedResource Include="Modules\**\*.css" />
+    <EmbeddedResource Include="Pages\**\*.cshtml" />
+    <EmbeddedResource Include="Pages\**\*.js" />
+    <EmbeddedResource Include="Pages\**\*.css" />
+    <Content Remove="Modules\**\*.cshtml" />
+    <Content Remove="Modules\**\*.js" />
+    <Content Remove="Modules\**\*.css" />
+    <Content Remove="Pages\**\*.cshtml" />
+    <Content Remove="Pages\**\*.js" />
+    <Content Remove="Pages\**\*.css" />
+    <Content Remove="Properties\launchSettings.json" />
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.3.0" />
+    <ProjectReference Include="..\..\..\identityserver\src\Tudou.Abp.IdentityServer.Domain\Tudou.Abp.IdentityServer.Domain.csproj" />
+    <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.AspNetCore\Tudou.Abp.Identity.AspNetCore.csproj" />
+    <ProjectReference Include="..\Tudou.Abp.Account.HttpApi\Tudou.Abp.Account.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

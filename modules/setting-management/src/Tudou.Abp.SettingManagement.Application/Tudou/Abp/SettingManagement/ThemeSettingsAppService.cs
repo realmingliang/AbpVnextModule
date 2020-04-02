@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Tudou.Abp.SettingManagement.Authorization;
 using Tudou.Abp.SettingManagement.ThemeSettings;
@@ -32,7 +30,6 @@ namespace Tudou.Abp.SettingManagement
                 AutoHideHeader = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(ThemeSettingNames.AutoHideHeader)),
                 FixSiderbar = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(ThemeSettingNames.FixSiderbar)),
                 ColorWeak = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(ThemeSettingNames.ColorWeak)),
-                Title = await _settingProvider.GetOrNullAsync(ThemeSettingNames.Title),
             };
         }
 
@@ -54,7 +51,6 @@ namespace Tudou.Abp.SettingManagement
                     input.FixSiderbar.ToString());
                 await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.ColorWeak,
                     input.ColorWeak.ToString());
-                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.Title, input.Title);
             }
         }
     }

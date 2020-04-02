@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using Tudou.Abp.Account.Settings;
 using Tudou.Abp.SettingManagement.Authorization;
-using Volo.Abp.Account.Settings;
 using Volo.Abp.Settings;
 
 namespace Tudou.Abp.SettingManagement

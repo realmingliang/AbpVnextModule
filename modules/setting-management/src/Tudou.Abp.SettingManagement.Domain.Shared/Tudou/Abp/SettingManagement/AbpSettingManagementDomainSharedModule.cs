@@ -2,7 +2,7 @@
 using Volo.Abp.Localization;
 using Volo.Abp.VirtualFileSystem;
 using Tudou.Abp.SettingManagement.Localization;
-using Volo.Abp.Identity;
+using Tudou.Abp.Identity;
 
 namespace Tudou.Abp.SettingManagement
 {

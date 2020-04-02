@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.Application.Contracts", "src\Tudou.Abp.SettingManagement.Application.Contracts\Tudou.Abp.SettingManagement.Application.Contracts.csproj", "{EC6EA6FB-F47A-46BB-8BE7-FFCECB7DD6B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tudou.Abp.SettingManagement.HttpApi.Client", "src\Tudou.Abp.SettingManagement.HttpApi.Client\Tudou.Abp.SettingManagement.HttpApi.Client.csproj", "{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.HttpApi.Client", "src\Tudou.Abp.SettingManagement.HttpApi.Client\Tudou.Abp.SettingManagement.HttpApi.Client.csproj", "{DE7E6201-55CF-4E9D-8ACF-9F1EB913F7CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tudou.Abp.SettingManagement.HttpApi", "src\Tudou.Abp.SettingManagement.HttpApi\Tudou.Abp.SettingManagement.HttpApi.csproj", "{6177FDDE-12B5-49E3-9A63-E8A0BDEEB273}"
 EndProject

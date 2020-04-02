@@ -15,6 +15,5 @@ namespace Tudou.Abp.SettingManagement.ThemeSettings
         public const string AutoHideHeader = Prefix + ".AutoHideHeader";
         public const string FixSiderbar = Prefix + ".FixSiderbar";
         public const string ColorWeak = Prefix + ".ColorWeak";
-        public const string Title = Prefix + ".Title";
     }
 }

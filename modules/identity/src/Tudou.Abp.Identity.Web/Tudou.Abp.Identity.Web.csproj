@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Tudou.Abp.Identity.Web</AssemblyName>
+    <PackageId>Tudou.Abp.Identity.Web</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\**\*.cshtml" />
+    <EmbeddedResource Include="Pages\**\*.js" />
+    <EmbeddedResource Include="Pages\**\*.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\**\*.cshtml" />
+    <Content Remove="Pages\**\*.js" />
+    <Content Remove="Pages\**\*.css" />
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="compilerconfig.json.defaults" />
+    <Content Remove="Properties\launchSettings.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tudou.Abp.Identity.HttpApi\Tudou.Abp.Identity.HttpApi.csproj" />
+
+    <ProjectReference Include="..\..\..\permission-management\src\Tudou.Abp.PermissionManagement.Web\Tudou.Abp.PermissionManagement.Web.csproj" />
+
+    <ProjectReference Include="..\..\..\..\framework\src\Tudou.Abp.AspNetCore.Mvc.UI.Bootstrap\Tudou.Abp.AspNetCore.Mvc.UI.Bootstrap.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\src\Tudou.Abp.AutoMapper\Tudou.Abp.AutoMapper.csproj" />
+    <ProjectReference Include="..\..\..\..\framework\src\Tudou.Abp.AspNetCore.Mvc.UI.Theme.Shared\Tudou.Abp.AspNetCore.Mvc.UI.Theme.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

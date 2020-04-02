@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Tudou.Abp.Identity;
 using Tudou.Abp.SettingManagement.Localization;
 using Volo.Abp.Authorization.Permissions;
-using Volo.Abp.Identity;
 using Volo.Abp.Localization;
 
 namespace Tudou.Abp.SettingManagement.Authorization

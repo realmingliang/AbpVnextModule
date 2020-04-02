@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tudou.Abp.Identity.EntityFrameworkCore</AssemblyName>
+    <PackageId>Tudou.Abp.Identity.EntityFrameworkCore</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tudou.Abp.Identity.Domain\Tudou.Abp.Identity.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.Users.EntityFrameworkCore" Version="2.3.0"></PackageReference>
+  </ItemGroup>
+  
+</Project>

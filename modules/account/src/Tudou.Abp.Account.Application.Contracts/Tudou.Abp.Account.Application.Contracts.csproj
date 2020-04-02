@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tudou.Abp.Account.Application.Contracts</AssemblyName>
+    <PackageId>Tudou.Abp.Account.Application.Contracts</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Tudou\Abp\Account\Localization\Resources\*.json" />
+    <Content Remove="Tudou\Abp\Account\Localization\Resources\*.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.Application.Contracts\Tudou.Abp.Identity.Application.Contracts.csproj" />
+  </ItemGroup>
+</Project>

@@ -6,12 +6,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Tudou.Abp.Saas.HttpApi</AssemblyName>
-    <PackageId>Tudou.Abp.TenantManagement.HttpApi</PackageId>
+    <PackageId>Tudou.Abp.Saas.HttpApi</PackageId>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace />
+    <IsPackable>true</IsPackable>
     <OutputType>Library</OutputType>
   </PropertyGroup>
 

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Tudou.Abp.Account.HttpApi</AssemblyName>
+    <PackageId>Tudou.Abp.Account.HttpApi</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.Domain\Tudou.Abp.Identity.Domain.csproj" />
+    <ProjectReference Include="..\Tudou.Abp.Account.Application.Contracts\Tudou.Abp.Account.Application.Contracts.csproj" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.3.0" />
+    <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.HttpApi\Tudou.Abp.Identity.HttpApi.csproj" />
+  </ItemGroup>
+
+</Project>

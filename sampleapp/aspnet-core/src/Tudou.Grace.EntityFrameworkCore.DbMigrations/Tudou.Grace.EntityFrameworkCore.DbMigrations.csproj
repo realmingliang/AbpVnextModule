@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Tudou.Grace</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200401130343_addorganizationunit.cs" />
+    <Compile Remove="Migrations\20200401130343_addorganizationunit.Designer.cs" />
+    <Compile Remove="Migrations\20200401130617_sss.cs" />
+    <Compile Remove="Migrations\20200401130617_sss.Designer.cs" />
+    <Compile Remove="Migrations\20200401131004_sss.cs" />
+    <Compile Remove="Migrations\20200401131004_sss.Designer.cs" />
+    <Compile Remove="Migrations\20200401132210_sss.cs" />
+    <Compile Remove="Migrations\20200401132210_sss.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tudou.Grace.EntityFrameworkCore\Tudou.Grace.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2" />
+  </ItemGroup>
+
+</Project>

@@ -5,13 +5,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Tudou.Abp.TenantManagement.HttpApi.Client</AssemblyName>
-    <PackageId>Tudou.Abp.TenantManagement.HttpApi.Client</PackageId>
+    <AssemblyName>Tudou.Abp.Saas.HttpApi.Client</AssemblyName>
+    <PackageId>Tudou.Abp.Saas.HttpApi.Client</PackageId>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <RootNamespace />
+    <IsPackable>true</IsPackable>
     <OutputType>Library</OutputType>
   </PropertyGroup>
 

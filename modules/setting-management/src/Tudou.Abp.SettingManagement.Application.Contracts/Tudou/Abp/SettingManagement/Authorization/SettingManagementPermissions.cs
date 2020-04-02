@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Volo.Abp.Identity;
-
+﻿using Tudou.Abp.Identity;
 namespace Tudou.Abp.SettingManagement.Authorization
 {
-   public class SettingManagementPermissions
+    public class SettingManagementPermissions
     {
         public const string Name = ".SettingManagement";
        

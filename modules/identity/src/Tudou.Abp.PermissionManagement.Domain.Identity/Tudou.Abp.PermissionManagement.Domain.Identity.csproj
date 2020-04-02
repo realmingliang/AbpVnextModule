@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tudou.Abp.PermissionManagement.Domain.Identity</AssemblyName>
+    <PackageId>Tudou.Abp.PermissionManagement.Domain.Identity</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tudou.Abp.Identity.Domain.Shared\Tudou.Abp.Identity.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Tudou.Abp.Identity.Domain\Tudou.Abp.Identity.Domain.csproj" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain" Version="2.3.0"/>
+  </ItemGroup>
+
+</Project>

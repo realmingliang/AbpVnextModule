@@ -18,10 +18,6 @@
         /// 色弱
         /// </summary>
         public bool ColorWeak { get; set; }
-        /// <summary>
-        /// 标题
-        /// </summary>
-        public string Title { get; set; }
 
     }
 }

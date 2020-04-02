@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Tudou.Abp.SettingManagement.Authorization;
-using Volo.Abp.Identity.Settings;
+using Tudou.Abp.Identity.Settings;
 using Volo.Abp.Settings;
 
 namespace Tudou.Abp.SettingManagement

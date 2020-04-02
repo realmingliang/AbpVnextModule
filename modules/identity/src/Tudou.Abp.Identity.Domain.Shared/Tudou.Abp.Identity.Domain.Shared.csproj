@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tudou.Abp.Identity.Domain.Shared</AssemblyName>
+    <PackageId>Tudou.Abp.Identity.Domain.Shared</PackageId>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Tudou\Abp\Identity\Localization\*.json" />
+    <Content Remove="Tudou\Abp\Identity\Localization\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Users.Domain.Shared" Version="2.3.0"></PackageReference>
+    <PackageReference Include="Volo.Abp.Validation" Version="2.3.0"></PackageReference>
+  </ItemGroup>
+
+</Project>

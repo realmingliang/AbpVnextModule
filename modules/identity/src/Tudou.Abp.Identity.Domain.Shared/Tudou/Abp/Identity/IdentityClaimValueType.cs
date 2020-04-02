@@ -1,0 +1,10 @@
+﻿namespace Tudou.Abp.Identity
+{
+    public enum IdentityClaimValueType
+    {
+        String,
+        Int,
+        Boolean,
+        DateTime
+    }
+}

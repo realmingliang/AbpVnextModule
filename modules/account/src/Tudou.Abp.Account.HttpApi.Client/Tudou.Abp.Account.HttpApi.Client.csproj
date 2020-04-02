@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\configureawait.props" />
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tudou.Abp.Account.HttpApi.Client</AssemblyName>
+    <PackageId>Tudou.Abp.Account.HttpApi.Client</PackageId>
+    <RootNamespace />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tudou.Abp.Account.Application.Contracts\Tudou.Abp.Account.Application.Contracts.csproj" />
+    <PackageReference Include="Volo.Abp.Http.Client" Version="2.3.0"/>
+
+  </ItemGroup>
+
+</Project>
