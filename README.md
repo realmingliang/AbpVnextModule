@@ -12,7 +12,7 @@
 
 - Saas租户版本管理
 
-  
+- identity 组织机构管理
 
 应用程序模板:
 https://github.com/xiaoliang1314/AbpVnext-AntdPro
