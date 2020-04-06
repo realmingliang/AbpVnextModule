@@ -33,7 +33,7 @@ const Model: LoginModelType = {
   },
 
   effects: {
-    *login({ payload }, { call, put }) {
+    *login({ payload,callback }, { call, put }) {
       const formData = new FormData();
       formData.append('password', payload.password);
       formData.append('username', payload.userNameOrEmailAddress);
@@ -49,6 +49,7 @@ const Model: LoginModelType = {
       // Login successfully
       if (response.access_token !== undefined) {
         Store.SetToken(response.access_token);
+        callback();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
         let { redirect } = params as { redirect: string };

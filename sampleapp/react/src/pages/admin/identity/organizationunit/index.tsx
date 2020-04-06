@@ -1,21 +1,22 @@
 
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Card, Tree, Button, message } from 'antd';
+import { Row, Col, Card, Tree, Button, message, Tabs, Table } from 'antd';
 import { useRequest } from '@umijs/hooks';
 import { contextMenu, Menu, Item } from 'react-contexify';
-import { connect } from 'dva';
 import { getOrganizationUnits, deleteOrganizationUnit } from './service';
 import { OrganizationUnitDto, CreateOrUpdateOrganizationUnitInput } from './data';
 import { createTree } from '@/utils/utils';
 import CreateOrUpdateForm from './components/createOrUpdateForm';
 import 'react-contexify/dist/ReactContexify.min.css';
 import PermissionManagement from '@/components/PermissionsManagement';
-import { ConnectState, ConnectProps } from '@/models/connect';
+import { ConnectProps } from '@/models/connect';
 import { GetPermissionListResultDto } from '@/services/data';
+import { PlusOutlined } from '@ant-design/icons';
 
 
-
+const { TabPane } = Tabs;
+const { DirectoryTree } = Tree;
 const initEmptyOrganizationUnit: CreateOrUpdateOrganizationUnitInput = {
   displayName: "",
   parentId: "",
@@ -24,7 +25,7 @@ const initEmptyOrganizationUnit: CreateOrUpdateOrganizationUnitInput = {
 interface OrganizationUnitProps extends ConnectProps {
   permissions: GetPermissionListResultDto;
 }
-const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch}) => {
+const OrganizationUnit: React.FC<OrganizationUnitProps> = ({ permissions, dispatch }) => {
   const [modalVisible, handleModalVisible] = useState<boolean>(false);
 
   const [organizations, setOrganizationUnit] = useState<OrganizationUnitDto[]>([]);
@@ -84,8 +85,8 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
       <Item key="edit" onClick={() => handleModalVisible(true)}>
         修改
       </Item>
-      <Item onClick={()=>handlePermissionModalVisible(true)} >
-      权限
+      <Item onClick={() => handlePermissionModalVisible(true)} >
+        权限
    </Item>
       <Item onClick={handleAddChildren} >
         添加子组织
@@ -96,12 +97,54 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
       </Item>
     </Menu>
   );
+  const organizationUnitUserTableColumns = [
+    {
+      title: '操作',
+      dataIndex: 'action',
+      key: 'action',
+      render: (text: any, record: any) => <Button icon="close-circle" type="primary">删除</Button>,
+    },
+    {
+      title: '用户名',
+      dataIndex: 'userName',
+      key: 'userName',
+    },
+    {
+      title: '添加时间',
+      dataIndex: 'addedTime',
+      key: 'addedTime',
+    },
+  ];
+  const organizationUnitRoleTableColumns = [
+    {
+      title: '操作',
+      dataIndex: 'action',
+      key: 'action',
+      render: (text: any, record: any) => <Button icon="close-circle" type="primary">删除</Button>,
+    },
+    {
+      title: '角色',
+      dataIndex: 'displayName',
+      key: 'displayName',
+    },
+    {
+      title: '添加时间',
+      dataIndex: 'addedTime',
+      key: 'addedTime',
+    },
+  ]
+   const selectTree = async (selectedKeys: any[],info:any) => {
+    const { data } = info.node;
+    await setOrganizationUnitItem({ displayName: data.displayName, parentId: data.parentId, id: data.id })
+  }
+
   return (
     <PageHeaderWrapper>
       <Row gutter={24}>
         <Col span={8}>
-          <Card title="组织机构树" extra={<Button onClick={handleCreate} type="primary">新增根组织</Button>}>
-            <Tree.DirectoryTree
+          <Card title="组织机构树" extra={<Button   icon={<PlusOutlined />} onClick={handleCreate} type="primary">新增根组织</Button>}>
+            <DirectoryTree
+              onSelect={selectTree}
               treeData={treeData}
               onRightClick={treeRightClickHandler}
             />
@@ -110,8 +153,39 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
         </Col>
         <Col span={16}>
           <Card title="成员管理">
-            ...
-           </Card>
+            <Tabs type="card" >
+              <TabPane tab="组织成员" key="member">
+                {
+                  organizationUnitItem.id === "" ? (<p>选择一个组织成员</p>) :
+                    (<><Col style={{ textAlign: 'right' }}>
+                      <Button icon={<PlusOutlined />} type="primary">添加组织成员</Button>
+                    </Col>
+                      <Table
+                        dataSource={
+                          []
+                        }
+                        columns={organizationUnitUserTableColumns} />
+                    </>)
+
+                }
+              </TabPane>
+              <TabPane tab="角色" key="role">
+                {
+                  organizationUnitItem.id === "" ? (<p>选择一个角色</p>) :
+                    (<div>   <Col style={{ textAlign: 'right' }}>
+                      <Button icon={<PlusOutlined />} type="primary">添加角色</Button>
+                    </Col>
+                      <Table
+                        dataSource={
+                          []
+                        }
+                        columns={organizationUnitRoleTableColumns} />
+                    </div>)
+
+                }
+              </TabPane>
+            </Tabs>
+          </Card>
         </Col>
       </Row>
       <CreateOrUpdateForm
@@ -121,11 +195,11 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
         organizationUnit={organizationUnitItem}
       />
       <PermissionManagement
-      providerKey={organizationUnitItem.id!}
-      providerName='O'
-      onCancel={() => handlePermissionModalVisible(false)}
-      modalVisible={permissionModalVisible}
-    />
+        providerKey={organizationUnitItem.id!}
+        providerName='O'
+        onCancel={() => handlePermissionModalVisible(false)}
+        modalVisible={permissionModalVisible}
+      />
     </PageHeaderWrapper>
   )
 }

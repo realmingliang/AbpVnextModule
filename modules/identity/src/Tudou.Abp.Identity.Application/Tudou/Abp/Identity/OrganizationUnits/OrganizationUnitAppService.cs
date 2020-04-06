@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Application.Dtos;
+using Volo.Abp.Domain.Repositories;
 
 namespace Tudou.Abp.Identity.OrganizationUnits
 {
@@ -14,17 +15,20 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         protected IdentityRoleManager RoleManager { get; }
         protected IIdentityRoleRepository RoleRepository { get; }
         protected IdentityUserManager UserManager { get; }
+     
         protected IIdentityUserRepository UserRepository { get; }
         public OrganizationUnitAppService(
          OrganizationUnitManager organizationUnitManager,
           IOrganizationUnitRepository organizationUnitRepository, IdentityRoleManager roleManager,
             IIdentityRoleRepository roleRepository,
              IdentityUserManager userManager,
+         
             IIdentityUserRepository userRepository)
         {
             OrganizationUnitManager = organizationUnitManager;
             OrganizationUnitRepository = organizationUnitRepository;
             RoleManager = roleManager;
+     
             RoleRepository = roleRepository;
             UserManager = userManager;
             UserRepository = userRepository;
@@ -108,5 +112,41 @@ namespace Tudou.Abp.Identity.OrganizationUnits
             dto.RoleCount = await OrganizationUnitRepository.GetRoleCountAsync(organizationUnit.Id);
             return dto;
         }
+
+        public async Task<OrganizationUnitDto> MoveOrganizationUnit(Guid id, MoveOrganizationUnitInput input)
+        {
+            await OrganizationUnitManager.MoveAsync(id, input.NewParentId);
+
+            return await CreateOrganizationUnitDto(
+                await OrganizationUnitRepository.GetAsync(id)
+                );
+        }
+
+        public async Task RemoveUserFromOrganizationUnit(Guid id, RemoveUserFromOrganizationUnitInput input)
+        {
+            await UserManager.RemoveFromOrganizationUnitAsync(input.UserId, id);
+        }
+
+        public async Task RemoveRoleFromOrganizationUnit(Guid id, RemoveRoleFromOrganizationUnitInput input)
+        {
+            await RoleManager.RemoveFromOrganizationUnitAsync(input.RoleId, id);
+        }
+
+        public async Task AddUsersToOrganizationUnit(Guid id, UsersToOrganizationUnitInput input)
+        {
+            foreach (var userId in input.UserIds)
+            {
+                await UserManager.AddToOrganizationUnitAsync(userId, id);
+            }
+        }
+
+        public async Task AddRolesToOrganizationUnit(Guid id, RolesToOrganizationUnitInput input)
+        {
+            foreach (var roleId in input.RoleIds)
+            {
+                await RoleManager.AddToOrganizationUnitAsync(roleId, id);
+            }
+        }
+
     }
 }

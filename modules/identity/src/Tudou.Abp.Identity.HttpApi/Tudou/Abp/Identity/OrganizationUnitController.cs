@@ -44,16 +44,46 @@ namespace Tudou.Abp.Identity
             return OrganizationUnitAppService.DeleteOrganizationUnit(id);
         }
         [HttpGet]
-        [Route("/find-roles")]
-        public Task<PagedResultDto<NameValueDto>> FindRoles(FindOrganizationUnitRolesInput input)
+        [Route("find-roles")]
+        public virtual Task<PagedResultDto<NameValueDto>> FindRoles(FindOrganizationUnitRolesInput input)
         {
             return OrganizationUnitAppService.FindRoles(input);
         }
         [HttpGet]
-        [Route("/find-users")]
-        public Task<PagedResultDto<NameValueDto>> FindUsers(FindOrganizationUnitUsersInput input)
+        [Route("find-users")]
+        public virtual Task<PagedResultDto<NameValueDto>> FindUsers(FindOrganizationUnitUsersInput input)
         {
             return OrganizationUnitAppService.FindUsers(input);
+        }
+        [HttpPut]
+        [Route("{id}/move")]
+        public virtual Task<OrganizationUnitDto> MoveOrganizationUnit(Guid id, MoveOrganizationUnitInput input)
+        {
+            return OrganizationUnitAppService.MoveOrganizationUnit(id,input);
+        }
+        [HttpDelete]
+        [Route("{id}/remove-user-from-organizationunit")]
+        public virtual Task RemoveUserFromOrganizationUnit(Guid id, RemoveUserFromOrganizationUnitInput input)
+        {
+            return OrganizationUnitAppService.RemoveUserFromOrganizationUnit(id, input);
+        }
+        [HttpDelete]
+        [Route("{id}/remove-role-from-organizationunit")]
+        public virtual Task RemoveRoleFromOrganizationUnit(Guid id, RemoveRoleFromOrganizationUnitInput input)
+        {
+            return OrganizationUnitAppService.RemoveRoleFromOrganizationUnit(id, input);
+        }
+        [HttpPost]
+        [Route("{id}/add-users-to-organizationunit")]
+        public virtual Task AddUsersToOrganizationUnit(Guid id, UsersToOrganizationUnitInput input)
+        {
+            return OrganizationUnitAppService.AddUsersToOrganizationUnit(id, input);
+        }
+        [HttpPost]
+        [Route("{id}/add-roles-to-organizationunit")]
+        public virtual Task AddRolesToOrganizationUnit(Guid id, RolesToOrganizationUnitInput input)
+        {
+            return OrganizationUnitAppService.AddRolesToOrganizationUnit(id, input);
         }
     }
 }

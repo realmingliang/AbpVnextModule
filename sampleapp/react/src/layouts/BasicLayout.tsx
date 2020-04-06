@@ -120,11 +120,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
   /**
    * constructor
    */
-  const { initialState,refresh } = useModel('@@initialState');
+  const { initialState } = useModel('@@initialState');
   let themeSettings=InitThemeSettings(initialState!.setting.values as any);
-  useEffect(() => {
-    refresh();
-  }, []);
   /**
    * init variables
    */

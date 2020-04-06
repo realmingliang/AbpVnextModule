@@ -1,14 +1,11 @@
 import React from 'react';
-import { Redirect } from 'umi';
+import { Redirect, useModel } from 'umi';
 import { stringify } from 'querystring';
-import Store from './../utils/store';
-
 
 const SecurityLayout: React.FC<null> = props => {
   const { children } = props;
-  const token = Store.GetToken();
-
-  const isLogin = token && token!=null && token!=undefined;
+  const { initialState } = useModel('@@initialState');
+  const isLogin = initialState?.currentUser && initialState.currentUser.id;
   const queryString = stringify({
     redirect: window.location.href,
   });

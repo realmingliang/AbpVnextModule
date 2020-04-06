@@ -1,23 +1,18 @@
 
 import { Alert, Checkbox } from 'antd';
 import React, { useState } from 'react';
-import { Dispatch, AnyAction } from 'redux';
-import { Link } from 'umi';
+import { Link, ConnectProps, useModel } from 'umi';
 import { connect } from 'dva';
 import { StateType } from '@/models/login';
 import { LoginParamsType } from '@/services/login';
 import { ConnectState } from '@/models/connect';
-
 import LoginFrom from './components/Login';
 import styles from './style.less';
 import TenantsSelect from '@/components/TenantsSelect';
-import { ApplicationConfiguration } from '@/models/global';
 
 const { Tab, UserName, Password, Submit } = LoginFrom;
-interface LoginProps {
-  dispatch: Dispatch<AnyAction>;
+interface LoginProps extends ConnectProps {
   userLogin: StateType;
-  multiTenancy?: ApplicationConfiguration.MultiTenancy;
   submitting?: boolean;
 }
 
@@ -35,16 +30,20 @@ const LoginMessage: React.FC<{
 );
 
 const Login: React.FC<LoginProps> = props => {
-  const { userLogin = {}, submitting, multiTenancy } = props;
+  const { userLogin = {}, submitting } = props;
   const { status } = userLogin;
   const [autoLogin, setAutoLogin] = useState(true);
-
+  const { initialState,refresh} = useModel('@@initialState');
+  const {multiTenancy} = initialState!;
   const handleSubmit = (values: LoginParamsType) => {
     const { dispatch } = props;
 
-    dispatch({
+    dispatch!({
       type: 'login/login',
       payload: { ...values },
+      callback:async ()=>{
+        await refresh();
+      }
     });
   };
 
@@ -103,8 +102,7 @@ const Login: React.FC<LoginProps> = props => {
   );
 };
 
-export default connect(({ global, login, loading }: ConnectState) => ({
-  multiTenancy: global.applicationConfiguration?.multiTenancy,
+export default connect(({ login, loading }: ConnectState) => ({
   userLogin: login,
   submitting: loading.effects['login/login'],
 }))(Login);

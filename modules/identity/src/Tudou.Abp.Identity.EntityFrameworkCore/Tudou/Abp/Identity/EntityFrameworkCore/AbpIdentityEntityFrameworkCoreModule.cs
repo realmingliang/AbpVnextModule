@@ -18,6 +18,8 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
                 options.AddRepository<IdentityRole, EfCoreIdentityRoleRepository>();
                 options.AddRepository<IdentityClaimType, EfCoreIdentityClaimTypeRepository>();
                 options.AddRepository<OrganizationUnit, EfCoreOrganizationUnitRepository>();
+                options.AddRepository<IdentityUserOrganizationUnit, EfCoreIdentityUserOrganizationUnitRepository>();
+                options.AddRepository<OrganizationUnitRole, EfCoreOrganizationUnitRoleRepository>();
 
             });
         }

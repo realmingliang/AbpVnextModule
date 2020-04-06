@@ -11,6 +11,8 @@ using Volo.Abp.Domain.Services;
 using Tudou.Abp.Identity.Localization;
 using Volo.Abp;
 using Volo.Abp.Threading;
+using Volo.Abp.Domain.Repositories;
+using Tudou.Abp.Identity.OrganizationUnits;
 
 namespace Tudou.Abp.Identity
 {
@@ -20,6 +22,7 @@ namespace Tudou.Abp.Identity
 
         protected IStringLocalizer<IdentityResource> Localizer { get; }
         protected ICancellationTokenProvider CancellationTokenProvider { get; }
+        protected IOrganizationUnitRoleRepository OrganizationUnitRoleRepository { get; }
 
         public IdentityRoleManager(
             IdentityRoleStore store,
@@ -27,6 +30,7 @@ namespace Tudou.Abp.Identity
             ILookupNormalizer keyNormalizer,
             IdentityErrorDescriber errors,
             ILogger<IdentityRoleManager> logger,
+            IOrganizationUnitRoleRepository organizationUnitRoleRepository,
             IStringLocalizer<IdentityResource> localizer,
             ICancellationTokenProvider cancellationTokenProvider)
             : base(
@@ -38,6 +42,7 @@ namespace Tudou.Abp.Identity
         {
             Localizer = localizer;
             CancellationTokenProvider = cancellationTokenProvider;
+            OrganizationUnitRoleRepository = organizationUnitRoleRepository;
         }
 
         public virtual async Task<IdentityRole> GetByIdAsync(Guid id)
@@ -60,7 +65,21 @@ namespace Tudou.Abp.Identity
 
             return await base.SetRoleNameAsync(role, name);
         }
+        public virtual async Task RemoveFromOrganizationUnitAsync(Guid roleId, Guid ouId)
+        {
+            await OrganizationUnitRoleRepository.DeleteAsync(uou => uou.RoleId == roleId && uou.OrganizationUnitId == ouId);
+        }
+        public virtual async Task AddToOrganizationUnitAsync(Guid roleId, Guid ouId)
+        {
+            var currentRu = await OrganizationUnitRoleRepository.FindAsync(t => t.RoleId == roleId && t.OrganizationUnitId == ouId);
 
+            if (currentRu != null)
+            {
+                return;
+            }
+            var role = await Store.FindByIdAsync(roleId.ToString(), CancellationToken);
+            await OrganizationUnitRoleRepository.InsertAsync(new OrganizationUnitRole(role.TenantId, roleId, ouId));
+        }
         public override async Task<IdentityResult> DeleteAsync(IdentityRole role)
         {
             if (role.IsStatic)

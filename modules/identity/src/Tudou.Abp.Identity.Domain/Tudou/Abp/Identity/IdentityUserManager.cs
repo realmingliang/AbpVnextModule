@@ -19,7 +19,7 @@ namespace Tudou.Abp.Identity
     {
         protected IIdentityRoleRepository RoleRepository { get; }
         protected IIdentityUserRepository UserRepository { get; }
-
+        protected IdentityUserOrganizationUnitRepository UserOrganizationUnitRepository { get; }
         protected override CancellationToken CancellationToken => CancellationTokenProvider.Token;
 
         protected ICancellationTokenProvider CancellationTokenProvider { get; }
@@ -32,6 +32,7 @@ namespace Tudou.Abp.Identity
             IPasswordHasher<IdentityUser> passwordHasher,
             IEnumerable<IUserValidator<IdentityUser>> userValidators,
             IEnumerable<IPasswordValidator<IdentityUser>> passwordValidators,
+            IdentityUserOrganizationUnitRepository userOrganizationUnitRepository,
             ILookupNormalizer keyNormalizer,
             IdentityErrorDescriber errors,
             IServiceProvider services,
@@ -49,6 +50,7 @@ namespace Tudou.Abp.Identity
                   logger)
         {
             RoleRepository = roleRepository;
+            UserOrganizationUnitRepository = userOrganizationUnitRepository;
             UserRepository = userRepository;
             CancellationTokenProvider = cancellationTokenProvider;
         }
@@ -85,7 +87,21 @@ namespace Tudou.Abp.Identity
 
             return IdentityResult.Success;
         }
+        public virtual async Task RemoveFromOrganizationUnitAsync(Guid userId, Guid ouId)
+        {
+            await UserOrganizationUnitRepository.DeleteAsync(uou => uou.UserId == userId && uou.OrganizationUnitId == ouId);
+        }
+        public virtual async Task AddToOrganizationUnitAsync(Guid userId, Guid ouId)
+        {
+            var currentOu = await UserOrganizationUnitRepository.FindAsync(t => t.UserId == userId && t.OrganizationUnitId == ouId);
 
+            if (currentOu!=null)
+            {
+                return;
+            }
+            var user = await UserRepository.GetAsync(userId);
+            await UserOrganizationUnitRepository.InsertAsync(new IdentityUserOrganizationUnit(user.TenantId, userId, ouId));
+        }
         public virtual async Task<IdentityResult> AddDefaultRolesAsync([NotNull] IdentityUser user)
         {
             await UserRepository.EnsureCollectionLoadedAsync(user, u => u.Roles, CancellationToken);
