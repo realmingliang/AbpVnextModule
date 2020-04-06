@@ -20,6 +20,11 @@ namespace Tudou.Abp.Identity
             Guid id,
             CancellationToken cancellationToken = default
         );
+        Task<long> GetCountByOrganizationUnitIdAsync(
+       Guid organizationUnitId,
+       string filter = null,
+       CancellationToken cancellationToken = default
+     );
 
         Task<IdentityUser> FindByLoginAsync(
             [NotNull] string loginProvider,
@@ -29,23 +34,29 @@ namespace Tudou.Abp.Identity
         );
 
         Task<IdentityUser> FindByNormalizedEmailAsync(
-            [NotNull] string normalizedEmail, 
+            [NotNull] string normalizedEmail,
             bool includeDetails = true,
             CancellationToken cancellationToken = default
         );
 
         Task<List<IdentityUser>> GetListByClaimAsync(
-            Claim claim, 
+            Claim claim,
             bool includeDetails = false,
             CancellationToken cancellationToken = default
         );
 
         Task<List<IdentityUser>> GetListByNormalizedRoleNameAsync(
-            string normalizedRoleName, 
+            string normalizedRoleName,
             bool includeDetails = false,
             CancellationToken cancellationToken = default
         );
-
+        Task<List<IdentityUser>> GetListByOrganizationUnitIdAsync(
+         Guid organizationUnitId,
+         int maxResultCount = int.MaxValue,
+         int skipCount = 0,
+         string filter = null,
+         CancellationToken cancellationToken = default
+        );
         Task<List<IdentityUser>> GetListAsync(
             string sorting = null,
             int maxResultCount = int.MaxValue,

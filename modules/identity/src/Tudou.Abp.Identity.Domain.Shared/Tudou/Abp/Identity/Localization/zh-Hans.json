@@ -2,6 +2,7 @@
   "culture": "zh-Hans",
   "texts": {
     "Menu:IdentityManagement": "身份认证管理",
+
     "Users": "用户",
     "NewUser": "新用户",
     "UserName": "用户名称",
@@ -65,6 +66,7 @@
     "Identity.StaticRoleDeletionErrorMessage": "无法删除静态角色.",
     "Volo.Abp.Identity:010001": "您无法删除自己的帐户!",
     "Permission:IdentityManagement": "身份标识管理",
+    "Permission:OrganizationUnitManagement": "组织机构管理",
     "Permission:RoleManagement": "角色管理",
     "Permission:Create": "创建",
     "Permission:Edit": "编辑",

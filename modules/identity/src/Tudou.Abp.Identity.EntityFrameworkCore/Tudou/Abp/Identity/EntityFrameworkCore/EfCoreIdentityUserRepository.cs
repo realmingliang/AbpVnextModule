@@ -147,5 +147,38 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
         {
             return GetQueryable().IncludeDetails();
         }
+
+        public async Task<List<IdentityUser>> GetListByOrganizationUnitIdAsync(Guid organizationUnitId,
+            int maxResultCount = int.MaxValue,
+            int skipCount = 0, 
+            string filter = null, CancellationToken cancellationToken = default)
+        {
+
+            var query = GetUsersQuerableByOrganizationUnitIdAsync(organizationUnitId, filter);
+            return await query
+                  .PageBy(skipCount, maxResultCount)
+                  .ToListAsync(GetCancellationToken(cancellationToken));
+        }
+        private IQueryable<IdentityUser> GetUsersQuerableByOrganizationUnitIdAsync(Guid organizationUnitId,
+            string filter = null)
+        {
+            var userIdsInOrganizationUnit = DbContext.Set<IdentityUserOrganizationUnit>()
+             .Where(uou => uou.OrganizationUnitId == organizationUnitId)
+             .Select(uou => uou.UserId);
+            return  DbSet
+               .Where(u => !userIdsInOrganizationUnit.Contains(u.Id))
+               .WhereIf(
+               !filter.IsNullOrWhiteSpace(),
+               u =>
+                   u.Name.Contains(filter)
+              );
+
+        }
+        public async Task<long> GetCountByOrganizationUnitIdAsync(Guid organizationUnitId, string filter = null, CancellationToken cancellationToken = default)
+        {
+            var query = GetUsersQuerableByOrganizationUnitIdAsync(organizationUnitId, filter);
+            return await query
+            .LongCountAsync(GetCancellationToken(cancellationToken));
+        }
     }
 }

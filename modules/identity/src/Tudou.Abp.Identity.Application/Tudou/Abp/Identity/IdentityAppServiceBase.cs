@@ -3,6 +3,7 @@ using Tudou.Abp.Identity.Localization;
 
 namespace Tudou.Abp.Identity
 {
+
     public abstract class IdentityAppServiceBase : ApplicationService
     {
         protected IdentityAppServiceBase()

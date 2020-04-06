@@ -13,7 +13,18 @@ namespace Tudou.Abp.Identity
             bool includeDetails = true,
             CancellationToken cancellationToken = default
         );
-
+        Task<List<IdentityRole>> GetListByOrganizationUnitIdAsync(
+            Guid organizationUnitId,
+            int maxResultCount = int.MaxValue,
+            int skipCount = 0,
+            string filter=null,
+            CancellationToken cancellationToken = default
+        );
+        Task<long> GetCountByOrganizationUnitIdAsync(
+          Guid organizationUnitId,
+          string filter = null,
+          CancellationToken cancellationToken = default
+        );
         Task<List<IdentityRole>> GetListAsync(
             string sorting = null,
             int maxResultCount = int.MaxValue,

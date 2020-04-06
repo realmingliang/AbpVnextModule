@@ -89,5 +89,12 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
 
             return await query.ToListAsync(GetCancellationToken(cancellationToken));
         }
+        public async Task<List<string>> GetCurrentUserRoleNamesByOrganizationUnitAsync(Guid id, CancellationToken cancellationToken = default)
+        {
+            var userOrganizationIds = DbContext.Set<IdentityUserOrganizationUnit>().Where(t => t.UserId == id).Select(t=>t.OrganizationUnitId);
+            var roleIds = DbContext.Set<OrganizationUnitRole>().Where(t => userOrganizationIds.Contains(t.OrganizationUnitId)).Select(t => t.RoleId).Distinct();
+            var query = DbContext.Roles.Where(t => roleIds.Contains(t.Id)).Select(t => t.Name);
+            return await query.ToListAsync(GetCancellationToken(cancellationToken));
+        }
     }
 }

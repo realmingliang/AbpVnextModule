@@ -16,5 +16,9 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         Task<OrganizationUnitDto> UpdateOrganizationUnit(Guid id,UpdateOrganizationUnitInput input);
 
         Task DeleteOrganizationUnit(Guid id);
+
+        Task<PagedResultDto<NameValueDto>> FindRoles(FindOrganizationUnitRolesInput input);
+
+        Task<PagedResultDto<NameValueDto>> FindUsers(FindOrganizationUnitUsersInput input);
     }
 }

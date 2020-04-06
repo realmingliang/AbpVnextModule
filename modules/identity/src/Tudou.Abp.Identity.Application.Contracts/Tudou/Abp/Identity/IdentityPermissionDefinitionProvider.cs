@@ -22,6 +22,14 @@ namespace Tudou.Abp.Identity
             usersPermission.AddChild(IdentityPermissions.Users.Delete, L("Permission:Delete"));
             usersPermission.AddChild(IdentityPermissions.Users.ManagePermissions, L("Permission:ChangePermissions"));
 
+            var organizationUnitPermission = identityGroup.AddPermission(IdentityPermissions.OrganizationUnits.Default,
+                L("Permission:OrganizationUnitManagement"));
+            organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.Create, L("Permission:Create"));
+            organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.Update, L("Permission:Edit"));
+            organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.Delete, L("Permission:Delete"));
+            organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.ManagePermissions, L("Permission:ChangePermissions"));
+
+
             identityGroup
                 .AddPermission(IdentityPermissions.UserLookup.Default, L("Permission:UserLookup"))
                 .WithProviders(ClientPermissionValueProvider.ProviderName);

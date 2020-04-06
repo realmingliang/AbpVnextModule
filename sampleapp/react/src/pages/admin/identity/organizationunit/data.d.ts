@@ -8,3 +8,13 @@ export interface OrganizationUnitDto{
   roleCount:number;
   id:string;
 }
+
+export interface OrganizationUnitCreateInput{
+  displayName:string;
+  parentId?:string;
+}
+export interface CreateOrUpdateOrganizationUnitInput{
+  id?:string;
+  parentId:string|null;
+  displayName:string;
+}

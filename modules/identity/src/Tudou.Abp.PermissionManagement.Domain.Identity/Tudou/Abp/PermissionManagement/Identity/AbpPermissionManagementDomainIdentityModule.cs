@@ -2,6 +2,7 @@
 using Tudou.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement;
+using Tudou.Abp.Identity.OrganizationUnits;
 
 namespace Tudou.Abp.PermissionManagement.Identity
 {
@@ -13,6 +14,10 @@ namespace Tudou.Abp.PermissionManagement.Identity
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            Configure<AbpPermissionOptions>(options =>
+            {
+                options.ValueProviders.Add<OrganizationUnitPermissionValueProvider>();
+            });
             Configure<PermissionManagementOptions>(options =>
             {
                 options.ManagementProviders.Add<UserPermissionManagementProvider>();
@@ -22,7 +27,7 @@ namespace Tudou.Abp.PermissionManagement.Identity
 
                 //TODO: Can we prevent duplication of permission names without breaking the design and making the system complicated
                 options.ProviderPolicies[UserPermissionValueProvider.ProviderName] = "AbpIdentity.Users.ManagePermissions";
-                options.ProviderPolicies[OrganizationUnitPermissionManagementPrivider.ProviderName] = "AbpIdentity.OrganizationUnit.ManagePermissions";
+                options.ProviderPolicies[OrganizationUnitPermissionValueProvider.ProviderName] = "AbpIdentity.OrganizationUnits.ManagePermissions";
                 options.ProviderPolicies[RolePermissionValueProvider.ProviderName] = "AbpIdentity.Roles.ManagePermissions";
             });
         }

@@ -3,8 +3,9 @@ import { Modal, Tabs, Checkbox, Divider, Tree, Button, message } from 'antd';
 import { GetPermissionListResultDto, PermissionGroupDto, PermissionGrantInfoDto } from '@/services/data';
 import { connect } from 'dva';
 import _ from 'lodash';
-import { ConnectProps } from '@/models/connect';
 import { createTree } from "../../utils/utils";
+import { useRequest } from '@umijs/hooks';
+import { updatePermissions } from '@/services/permission';
 
 const { TabPane } = Tabs;
 interface IsGrantedPermissions {
@@ -58,7 +59,7 @@ const TabContent: React.FC<TabContentProps> = ({ permissionItem, checkAll, check
     </>
   )
 }
-interface PermissionManagementProps extends ConnectProps {
+interface PermissionManagementProps {
   modalVisible: boolean;
   onCancel: () => void;
   providerName: string;
@@ -66,9 +67,16 @@ interface PermissionManagementProps extends ConnectProps {
   permissions: GetPermissionListResultDto;
 }
 const PermissionManagement: React.FC<PermissionManagementProps> = props => {
-  const { modalVisible, onCancel, dispatch, providerKey, providerName, permissions: { entityDisplayName, groups } } = props;
+  const { modalVisible, onCancel, providerKey, providerName, permissions: { entityDisplayName, groups } } = props;
   const allPermissions = _.groupBy(groups, 'name');
-
+  const { run: doUpdatePermissions } = useRequest(updatePermissions, {
+    manual: true,
+    onSuccess: () => {
+      message.success("操作成功！");
+    },onError:()=>{
+      message.success("操作失败!");
+    }
+  });
   const handlecheckItem = (groupname: string, permissions: IsGrantedPermissions[]) => {
     _.merge(allPermissions[groupname][0].permissions, permissions);
   }
@@ -84,25 +92,17 @@ const PermissionManagement: React.FC<PermissionManagementProps> = props => {
     return result;
   }
   const updateAllPermission = (permissions: IsGrantedPermissions[]) => {
-
-    dispatch({
-      type: 'permission/updatePermission',
-      payload: {
-        providerKey,
-        providerName,
-        permissions,
-      }
-    })
-    message.success("操作成功！");
-    onCancel();
+    doUpdatePermissions({providerKey,
+      providerName,
+      permissions,})
   }
   const handleSubmit = () => {
     const permissions = allPermissionToList();
     updateAllPermission(permissions);
   }
-  const grantedAllPermission=()=>{
+  const grantedAllPermission = () => {
     const permissions = allPermissionToList();
-    permissions.forEach(item=>{item.isGranted=true})
+    permissions.forEach(item => { item.isGranted = true })
     updateAllPermission(permissions);
   }
   const footer = (

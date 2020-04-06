@@ -23,6 +23,14 @@ namespace Tudou.Abp.Identity
             public const string Delete = Default + ".Delete";
             public const string ManagePermissions = Default + ".ManagePermissions";
         }
+        public static class OrganizationUnits
+        {
+            public const string Default = GroupName + ".OrganizationUnits";
+            public const string Create = Default + ".Create";
+            public const string Update = Default + ".Update";
+            public const string Delete = Default + ".Delete";
+            public const string ManagePermissions = Default + ".ManagePermissions";
+        }
 
         public static class UserLookup
         {

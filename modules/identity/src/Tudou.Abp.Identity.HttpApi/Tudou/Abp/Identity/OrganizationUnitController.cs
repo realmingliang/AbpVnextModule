@@ -38,9 +38,22 @@ namespace Tudou.Abp.Identity
 
         }
         [HttpDelete]
+        [Route("{id}")]
         public virtual Task DeleteOrganizationUnit(Guid id)
         {
             return OrganizationUnitAppService.DeleteOrganizationUnit(id);
+        }
+        [HttpGet]
+        [Route("/find-roles")]
+        public Task<PagedResultDto<NameValueDto>> FindRoles(FindOrganizationUnitRolesInput input)
+        {
+            return OrganizationUnitAppService.FindRoles(input);
+        }
+        [HttpGet]
+        [Route("/find-users")]
+        public Task<PagedResultDto<NameValueDto>> FindUsers(FindOrganizationUnitUsersInput input)
+        {
+            return OrganizationUnitAppService.FindUsers(input);
         }
     }
 }
