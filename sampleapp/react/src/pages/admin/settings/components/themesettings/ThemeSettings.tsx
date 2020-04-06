@@ -8,6 +8,8 @@ import styles from './ThemeSettings.less';
 import BlockCheckbox from './BlockCheckbox';
 import ThemeColor from './ThemeColor';
 import LayoutSetting, { renderLayoutSettingItem } from './LayoutChange';
+import { InitThemeSettings } from '@/utils/utils';
+import { useModel } from 'umi';
 
 interface BodyProps {
   title: string;
@@ -71,7 +73,6 @@ const Body: React.FC<BodyProps> = ({ children, title }) => (
   </div>
 );
 interface ThemeSettingsProps extends ConnectProps {
-  settings: ThemeSettingsDto;
   submitLoading?: boolean;
 }
 
@@ -79,7 +80,9 @@ interface ThemeSettingsProps extends ConnectProps {
 const ThemeSettings: React.FC<ThemeSettingsProps> = props => {
   const themeList = getThemeList();
   const { dispatch, submitLoading } = props;
-  const [settings, setThemeSettings] = useMergeValue<ThemeSettingsDto>(props.settings);
+  const { initialState } = useModel('@@initialState');
+  let themeSettings=InitThemeSettings(initialState!.setting.values as any);
+  const [settings, setThemeSettings] = useMergeValue<ThemeSettingsDto>(themeSettings);
   const changeSettings = (key: string, value: string | boolean, ) => {
     const nextState = { ...settings };
     nextState[key] = value;
@@ -147,7 +150,6 @@ const ThemeSettings: React.FC<ThemeSettingsProps> = props => {
     </div>
   )
 }
-export default connect(({ settings, loading }: ConnectState) => ({
-  settings: settings.themeSettings,
+export default connect(({ loading }: ConnectState) => ({
   submitLoading: loading.effects["settings/updateAllThemeSettings"]
 }))(ThemeSettings);

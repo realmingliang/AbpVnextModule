@@ -4,20 +4,13 @@ import ProTable, { ActionType, ProColumns } from '@ant-design/pro-table';
 import { Button, Dropdown, Menu, Tag, message } from 'antd';
 import { PlusOutlined, DownOutlined, SettingOutlined } from '@ant-design/icons';
 import PermissionManagement from '@/components/PermissionsManagement';
-import { connect } from 'dva';
-import { ConnectState, ConnectProps } from '@/models/connect';
-import { GetPermissionListResultDto } from '@/services/data';
 import { useRequest } from '@umijs/hooks';
 import { IdentityRoleDto } from './data';
 import { queryRoles, getRole, deleteRole as deleteRoleItem } from './service';
 import CreateOrUpdateForm from './components/createOrUpdateForm';
 
-interface IdentityRoleProps extends ConnectProps {
-  permissions: GetPermissionListResultDto;
-}
 
-const IdentityRole: React.FC<IdentityRoleProps> = props => {
-  const { permissions, dispatch } = props;
+const IdentityRole: React.FC = () => {
   const actionRef = useRef<ActionType>();
   const [roleName, handleRoleName] = useState<string>('');
   const [editRole, handleEditRole] = useState<IdentityRoleDto | undefined>(undefined);
@@ -53,13 +46,6 @@ const IdentityRole: React.FC<IdentityRoleProps> = props => {
  */
   const openPermissionModal = async (name: string) => {
     await handleRoleName(name);
-    await dispatch({
-      type: 'permission/getPermission',
-      payload: {
-        providerKey: name,
-        providerName: 'R',
-      }
-    })
     await handlePermissionModalVisible(true);
   };
 
@@ -132,7 +118,6 @@ const IdentityRole: React.FC<IdentityRoleProps> = props => {
         providerName='R'
         onCancel={() => handlePermissionModalVisible(false)}
         modalVisible={permissionModalVisible}
-        permissions={permissions}
       />
       <CreateOrUpdateForm
         editRole={editRole}
@@ -141,6 +126,4 @@ const IdentityRole: React.FC<IdentityRoleProps> = props => {
     </PageHeaderWrapper>
   );
 }
-export default connect(({ permission }: ConnectState) => ({
-  permissions: permission.permissions
-}))(IdentityRole);
+export default IdentityRole;

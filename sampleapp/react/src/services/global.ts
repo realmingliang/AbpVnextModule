@@ -1,6 +1,7 @@
 import request from "@/utils/request";
+import { ApplicationConfiguration } from "./data";
 
-export async function getConfiguration() {
+export async function getConfiguration():Promise<ApplicationConfiguration.Response> {
   return request('api/abp/application-configuration', {
     method: 'GET',
   });

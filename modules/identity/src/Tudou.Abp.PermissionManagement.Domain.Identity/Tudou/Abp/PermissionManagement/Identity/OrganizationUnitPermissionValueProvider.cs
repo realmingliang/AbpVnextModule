@@ -23,6 +23,11 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         public override async Task<PermissionGrantResult> CheckAsync(PermissionValueCheckContext context)
         {
             var userId = context.Principal?.FindFirst(AbpClaimTypes.UserId)?.Value;
+            if (userId == null)
+            {
+                return PermissionGrantResult.Undefined;
+            }
+
             var roleNames = await OrganizationUnitRepository.GetCurrentUserRoleNamesByOrganizationUnitAsync(Guid.Parse(userId));
             if (roleNames == null || !roleNames.Any())
             {

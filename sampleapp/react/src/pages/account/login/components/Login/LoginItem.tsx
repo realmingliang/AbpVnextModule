@@ -1,8 +1,7 @@
-import { Button, Col, Input, Row, Form, message } from 'antd';
-import React, { useState, useCallback, useEffect } from 'react';
+import { Button, Col, Input, Row, Form } from 'antd';
+import React, { useState, useEffect } from 'react';
 import omit from 'omit.js';
 import { FormItemProps } from 'antd/es/form/FormItem';
-import { getFakeCaptcha } from '@/services/login';
 
 import ItemMap from './map';
 import LoginContext, { LoginContextProps } from './LoginContext';
@@ -75,14 +74,7 @@ const LoginItem: React.FC<LoginItemProps> = props => {
     ...restProps
   } = props;
 
-  const onGetCaptcha = useCallback(async (mobile: string) => {
-    const result = await getFakeCaptcha(mobile);
-    if (result === false) {
-      return;
-    }
-    message.success('获取验证码成功！验证码为：1234');
-    setTiming(true);
-  }, []);
+
 
   useEffect(() => {
     let interval: number = 0;
@@ -128,7 +120,6 @@ const LoginItem: React.FC<LoginItemProps> = props => {
                 size="large"
                 onClick={() => {
                   const value = getFieldValue('mobile');
-                  onGetCaptcha(value);
                 }}
               >
                 {timing ? `${count} 秒` : '获取验证码'}

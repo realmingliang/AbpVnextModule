@@ -9,7 +9,7 @@ import ProLayout, {
   DefaultFooter,
 } from '@ant-design/pro-layout';
 import React, { useEffect } from 'react';
-import { Link } from 'umi';
+import { Link,useModel } from 'umi';
 import { Dispatch } from 'redux';
 import { connect } from 'dva';
 import { GithubOutlined } from '@ant-design/icons';
@@ -17,9 +17,9 @@ import { Result, Button } from 'antd';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
 import { ConnectState } from '@/models/connect';
-import { isAntDesignPro, getAuthorityFromRouter } from '@/utils/utils';
-import { ThemeSettingsDto } from '@/services/data';
+import { isAntDesignPro, getAuthorityFromRouter, InitThemeSettings } from '@/utils/utils';
 import logo from '../assets/logo.svg';
+import AppConsts from '@/utils/appconst';
 
 const noMatch = (
   <Result
@@ -40,7 +40,6 @@ export interface BasicLayoutProps extends ProLayoutProps {
   route: ProLayoutProps['route'] & {
     authority: string[];
   };
-  settings: ThemeSettingsDto;
   dispatch: Dispatch;
 }
 export type BasicLayoutContext = { [K in 'location']: BasicLayoutProps[K] } & {
@@ -114,7 +113,6 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
   const {
     dispatch,
     children,
-    settings,
     location = {
       pathname: '/',
     },
@@ -122,13 +120,10 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
   /**
    * constructor
    */
-
+  const { initialState,refresh } = useModel('@@initialState');
+  let themeSettings=InitThemeSettings(initialState!.setting.values as any);
   useEffect(() => {
-    if (dispatch) {
-      dispatch({
-        type: 'global/getApplicationConfiguration',
-      });
-    }
+    refresh();
   }, []);
   /**
    * init variables
@@ -183,7 +178,8 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
         menuDataRender={menuDataRender}
         rightContentRender={() => <RightContent />}
         {...props}
-        {...settings}
+        {...themeSettings}
+        title={AppConsts.appName}
       >
         <Authorized authority={authorized!.authority} noMatch={noMatch}>
           {children}
@@ -193,7 +189,6 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
   );
 };
 
-export default connect(({ global,settings }: ConnectState) => ({
+export default connect(({ global }: ConnectState) => ({
   collapsed: global.collapsed,
-  settings:settings.themeSettings,
 }))(BasicLayout);

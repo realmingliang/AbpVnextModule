@@ -1,4 +1,5 @@
 const AppConsts = {
+  appName:"Antd Pro",
   userManagement: {
     defaultAdminUserName: 'admin',
   },

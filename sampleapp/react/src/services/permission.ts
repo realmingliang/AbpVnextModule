@@ -1,7 +1,7 @@
 import request from "@/utils/request";
-import { GetPermissionsInput, UpdatePermissionsInput } from "./data";
+import { GetPermissionsInput, UpdatePermissionsInput, GetPermissionListResultDto } from "./data";
 
-export async function getPermissions(params:GetPermissionsInput) {
+export async function getPermissions(params:GetPermissionsInput):Promise<GetPermissionListResultDto> {
   return request('api/abp/permissions', {
     method: 'GET',
     params,

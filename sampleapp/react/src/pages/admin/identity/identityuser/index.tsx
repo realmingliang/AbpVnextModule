@@ -61,13 +61,6 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
   */
   const openPermissionModal = async (id: string) => {
     await handleUserId(id);
-    await dispatch({
-      type: 'permission/getPermission',
-      payload: {
-        providerKey: id,
-        providerName: 'U',
-      }
-    })
     await handlePermissionModalVisible(true);
   };
   /**
@@ -166,7 +159,6 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
         providerName='U'
         onCancel={() => handlePermissionModalVisible(false)}
         modalVisible={permissionModalVisible}
-        permissions={permissions}
       />
       <UpdateClaimTypesModal
       claimTypes={userClaimTypes}
@@ -177,8 +169,7 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
   )
 }
 
-export default connect(({ identityUser, permission }: ConnectState) => ({
+export default connect(({ identityUser }: ConnectState) => ({
   allRoles: identityUser.allRoles,
   createOrUpdateUser: identityUser.createOrUpdateUser,
-  permissions: permission.permissions
 }))(IdentityUser);

@@ -1,7 +1,7 @@
 import { Reducer } from 'redux';
 import { Effect } from 'dva';
 import { stringify } from 'querystring';
-import { router } from 'umi';
+import { history } from 'umi';
 import { login, logout } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';
 import AppConsts from "../utils/appconst";
@@ -64,7 +64,7 @@ const Model: LoginModelType = {
             return;
           }
         }
-        router.replace(redirect || '/');
+        history.replace(redirect || '/');
       }
     },
     *logout(_, { call }) {
@@ -73,7 +73,7 @@ const Model: LoginModelType = {
       // Note: There may be security issues, please note
       if (window.location.pathname !== '/account/login' && !redirect) {
         yield call(logout);
-        router.replace({
+        history.replace({
           pathname: '/account/login',
           search: stringify({
             redirect: window.location.href,

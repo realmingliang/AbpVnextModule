@@ -1,9 +1,5 @@
 import { MenuTheme } from 'antd/es/menu/MenuContext';
 
-export interface PageRequestDto {
-  skipCount?: nunber;
-  maxResultCount?: number;
-}
 export interface GetPermissionsInput {
   providerName: string;
   providerKey: string;
@@ -31,6 +27,68 @@ export interface ThemeSettingsDto {
 export interface GetPermissionListResultDto {
   entityDisplayName: string;
   groups: PermissionGroupDto[];
+}
+export interface PageRequestDto {
+  skipCount?: nunber;
+  maxResultCount?: number;
+}
+export namespace ApplicationConfiguration {
+  export interface Response {
+    localization: Localization;
+    auth: Auth;
+    setting: Value;
+    currentUser: CurrentUser;
+    features: Value;
+    multiTenancy:MultiTenancy;
+    currentTenant:CurrentTenant;
+  }
+
+  export interface Localization {
+    values: LocalizationValue;
+    languages: Language[];
+  }
+
+  export interface LocalizationValue {
+    [key: string]: { [key: string]: string };
+  }
+
+  export interface Language {
+    cultureName: string;
+    uiCultureName: string;
+    displayName: string;
+    flagIcon: string;
+  }
+
+  export interface Auth {
+    policies: Policy;
+    grantedPolicies: Policy;
+  }
+
+  export interface Policy {
+    [key: string]: boolean;
+  }
+
+  export interface Value {
+    values: Dictionary<string>;
+  }
+
+  export interface Dictionary<T = any> {
+    [key: string]: T;
+  }
+  export interface MultiTenancy{
+    isEnabled:boolean;
+  }
+  export interface CurrentUser {
+    isAuthenticated: boolean;
+    id: string;
+    tenantId: string;
+    userName: string;
+  }
+  export interface CurrentTenant {
+    id: string;
+    name: string;
+    isAvailable: boolean;
+  }
 }
 
 export interface PermissionGroupDto {

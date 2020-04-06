@@ -1,8 +1,8 @@
 import { GlobalOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { getLocale } from 'umi-plugin-react/locale';
 import { ClickParam } from 'antd/es/menu';
 import React from 'react';
+import { getLocale } from 'umi'
 import classNames from 'classnames';
 import { ConnectState } from '@/models/connect';
 import { connect } from 'dva';

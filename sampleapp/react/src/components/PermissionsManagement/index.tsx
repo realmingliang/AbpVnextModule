@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Tabs, Checkbox, Divider, Tree, Button, message } from 'antd';
 import { GetPermissionListResultDto, PermissionGroupDto, PermissionGrantInfoDto } from '@/services/data';
-import { connect } from 'dva';
 import _ from 'lodash';
 import { createTree } from "../../utils/utils";
 import { useRequest } from '@umijs/hooks';
-import { updatePermissions } from '@/services/permission';
+import { updatePermissions, getPermissions } from '@/services/permission';
 
 const { TabPane } = Tabs;
 interface IsGrantedPermissions {
@@ -64,17 +63,26 @@ interface PermissionManagementProps {
   onCancel: () => void;
   providerName: string;
   providerKey: string;
-  permissions: GetPermissionListResultDto;
 }
 const PermissionManagement: React.FC<PermissionManagementProps> = props => {
-  const { modalVisible, onCancel, providerKey, providerName, permissions: { entityDisplayName, groups } } = props;
+  const [permissions,setPermissions] =useState<GetPermissionListResultDto>({entityDisplayName:"",groups:[]});
+  const { entityDisplayName, groups } =permissions;
+  const { modalVisible, onCancel, providerKey, providerName } = props;
   const allPermissions = _.groupBy(groups, 'name');
   const { run: doUpdatePermissions } = useRequest(updatePermissions, {
     manual: true,
     onSuccess: () => {
       message.success("操作成功！");
+      onCancel();
     },onError:()=>{
       message.success("操作失败!");
+      onCancel();
+    }
+  });
+  const { run: doGetPermissions } = useRequest(getPermissions, {
+    manual: true,
+    onSuccess: (result) => {
+      setPermissions(result)
     }
   });
   const handlecheckItem = (groupname: string, permissions: IsGrantedPermissions[]) => {
@@ -113,6 +121,11 @@ const PermissionManagement: React.FC<PermissionManagementProps> = props => {
       <Button style={{ marginLeft: 8 }} onClick={handleSubmit} type='primary'>确认</Button>
     </>
   )
+  useEffect(()=>{
+    if(providerKey&&providerName){
+      doGetPermissions({ providerKey,providerName});
+    }
+  },[providerKey,providerName])
   return (
     <Modal
       title={`权限管理:${entityDisplayName}`}
@@ -129,4 +142,4 @@ const PermissionManagement: React.FC<PermissionManagementProps> = props => {
     </Modal>
   )
 }
-export default connect()(PermissionManagement);
+export default PermissionManagement;

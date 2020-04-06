@@ -1,10 +1,10 @@
 import { DefaultFooter, MenuDataItem, getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet } from 'react-helmet';
-import { Link } from 'umi';
-import React, { useEffect } from 'react';
+import { Link ,ConnectProps} from 'umi';
+import React from 'react';
 import { connect } from 'dva';
 import SelectLang from '@/components/SelectLang';
-import { ConnectProps, ConnectState } from '@/models/connect';
+import { ConnectState } from '@/models/connect';
 import { Dispatch } from 'redux';
 import logo from '../assets/logo.svg';
 import styles from './UserLayout.less';
@@ -16,9 +16,8 @@ export interface UserLayoutProps extends ConnectProps {
   dispatch: Dispatch;
 }
 
-const UserLayout: React.FC<UserLayoutProps> = props => {
+const UserLayout: React.FC<UserLayoutProps> = (props) => {
   const {
-    dispatch,
     route = {
       routes: [],
     },
@@ -26,9 +25,6 @@ const UserLayout: React.FC<UserLayoutProps> = props => {
   const { routes = [] } = route;
   const {
     children,
-    location = {
-      pathname: '',
-    },
   } = props;
   const { breadcrumb } = getMenuData(routes);
   const title = getPageTitle({
@@ -36,13 +32,6 @@ const UserLayout: React.FC<UserLayoutProps> = props => {
     breadcrumb,
     ...props,
   });
-  useEffect(() => {
-    if (dispatch) {
-      dispatch({
-        type: 'global/getApplicationConfiguration',
-      });
-    }
-  }, []);
   return (
     <>
       <Helmet>

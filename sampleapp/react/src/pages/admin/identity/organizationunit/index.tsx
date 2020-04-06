@@ -75,20 +75,6 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
 
     await handleModalVisible(true)
   }
-  /**
-  * 编辑组织机构权限
-  * @param id 组织机构
-  */
- const openPermissionModal = async () => {
-  await dispatch({
-    type: 'permission/getPermission',
-    payload: {
-      providerKey: organizationUnitItem.id!,
-      providerName: 'O',
-    }
-  })
-  await handlePermissionModalVisible(true);
-};
   const handleDeleteItem = async () => {
     await doDeleteItem(organizationUnitItem.id!);
     await doGetData();
@@ -98,7 +84,7 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
       <Item key="edit" onClick={() => handleModalVisible(true)}>
         修改
       </Item>
-      <Item onClick={openPermissionModal} >
+      <Item onClick={()=>handlePermissionModalVisible(true)} >
       权限
    </Item>
       <Item onClick={handleAddChildren} >
@@ -139,11 +125,8 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({permissions,dispatch
       providerName='O'
       onCancel={() => handlePermissionModalVisible(false)}
       modalVisible={permissionModalVisible}
-      permissions={permissions}
     />
     </PageHeaderWrapper>
   )
 }
-export default connect(({  permission }: ConnectState) => ({
-  permissions: permission.permissions
-}))(OrganizationUnit);
+export default OrganizationUnit;
