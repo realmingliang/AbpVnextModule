@@ -7,13 +7,10 @@
     <RootNamespace>Tudou.Grace</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Tudou.Abp.Saas.Domain.Shared" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="2.3.0" />
+  <ItemGroup>    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain.Shared" Version="2.4.0" />
     <PackageReference Include="Tudou.Abp.AuditLogging.Domain.Shared" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="2.3.0" />
-
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\modules\audit-logging\src\Tudou.Abp.AuditLogging.Domain.Shared\Tudou.Abp.AuditLogging.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\Tudou.Abp.Saas.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain.Shared\Tudou.Abp.IdentityServer.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\modules\identity\src\Tudou.Abp.Identity.Domain.Shared\Tudou.Abp.Identity.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\..\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\Tudou.Abp.SettingManagement.Domain.Shared.csproj" />

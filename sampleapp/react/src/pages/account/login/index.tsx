@@ -33,16 +33,18 @@ const Login: React.FC<LoginProps> = props => {
   const { userLogin = {}, submitting } = props;
   const { status } = userLogin;
   const [autoLogin, setAutoLogin] = useState(true);
-  const { initialState,refresh} = useModel('@@initialState');
+  const { initialState,refresh,loading} = useModel('@@initialState');
   const {multiTenancy} = initialState!;
-  const handleSubmit = (values: LoginParamsType) => {
+  const handleSubmit = async (values: LoginParamsType) => {
     const { dispatch } = props;
 
-    dispatch!({
+   await dispatch!({
       type: 'login/login',
       payload: { ...values },
       callback:async ()=>{
-        await refresh();
+        await refresh().then(()=>{
+          
+        });
       }
     });
   };

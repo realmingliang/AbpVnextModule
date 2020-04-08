@@ -27,9 +27,13 @@ namespace Tudou.Abp.Identity
             CreateMap<IdentityUserClaim, IdentityUserClaimDto>();
 
 
-            CreateMap<OrganizationUnits.OrganizationUnit, OrganizationUnitDto>()
+            CreateMap<OrganizationUnit, OrganizationUnitDto>()
                   .ForMember(t =>t.MemberCount, option => option.Ignore())
-                 .ForMember(t => t.RoleCount, option => option.Ignore()); ;
+                 .ForMember(t => t.RoleCount, option => option.Ignore());
+            CreateMap<IdentityRole, OrganizationUnitRoleListDto>()
+                  .ForMember(t => t.AddedTime, option => option.Ignore());
+            CreateMap<IdentityUser, OrganizationUnitUserListDto>()
+                 .ForMember(t => t.AddedTime, option => option.Ignore());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Tudou.Abp.IdentityServer.EntityFrameworkCore;
 using Tudou.Grace.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;

@@ -12,11 +12,17 @@
     <RootNamespace />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="2.4.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.SettingManagement.Domain.Shared\Tudou.Abp.SettingManagement.Domain.Shared.csproj" />
     <ProjectReference Include="..\..\..\account\src\Tudou.Abp.Account.Application.Contracts\Tudou.Abp.Account.Application.Contracts.csproj" />
 
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Fody" Version="6.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

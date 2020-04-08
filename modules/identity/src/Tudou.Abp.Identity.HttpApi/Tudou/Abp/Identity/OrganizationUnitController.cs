@@ -85,5 +85,17 @@ namespace Tudou.Abp.Identity
         {
             return OrganizationUnitAppService.AddRolesToOrganizationUnit(id, input);
         }
+        [HttpGet]
+        [Route("{id}/get-organizationunit-users")]
+        public virtual Task<PagedResultDto<OrganizationUnitUserListDto>> GetOrganizationUnitUsers(Guid id,PagedResultRequestDto input)
+        {
+            return OrganizationUnitAppService.GetOrganizationUnitUsers(id,input);
+        }
+        [HttpGet]
+        [Route("{id}/get-organizationunit-roles")]
+        public virtual Task<PagedResultDto<OrganizationUnitRoleListDto>> GetOrganizationUnitRoles(Guid id, PagedResultRequestDto input)
+        {
+            return OrganizationUnitAppService.GetOrganizationUnitRoles(id,input);
+        }
     }
 }

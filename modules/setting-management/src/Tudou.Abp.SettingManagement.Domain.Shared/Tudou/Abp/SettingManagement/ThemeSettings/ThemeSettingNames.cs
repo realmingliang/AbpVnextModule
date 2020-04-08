@@ -8,7 +8,6 @@ namespace Tudou.Abp.SettingManagement.ThemeSettings
     {
         private const string Prefix = "Abp.Theme";
         public const string NavTheme = Prefix + ".NavTheme";
-        public const string PrimaryColor = Prefix + ".PrimaryColor";
         public const string Layout = Prefix + ".Layout";
         public const string ContentWidth = Prefix + ".ContentWidth";
         public const string FixedHeader = Prefix + ".FixedHeader";

@@ -8,18 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\Tudou.Abp.AuditLogging.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\..\modules\account\src\Tudou.Abp.Account.Application.Contracts\Tudou.Abp.Account.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\..\modules\identity\src\Tudou.Abp.Identity.Application.Contracts\Tudou.Abp.Identity.Application.Contracts.csproj" />
     <ProjectReference Include="..\..\..\..\modules\setting-management\src\Tudou.Abp.SettingManagement.Application.Contracts\Tudou.Abp.SettingManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\Tudou.Grace.Domain.Shared\Tudou.Grace.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\saas\src\Tudou.Abp.Saas.Application.Contracts\Tudou.Abp.Saas.Application.Contracts.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Tudou.Abp.Saas.Application.Contracts" Version="2.3.0" />
-    <PackageReference Include="Tudou.Abp.Saas.Domain.Shared" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="2.3.0" />
-    <PackageReference Include="Tudou.Abp.AuditLogging.Application.Contracts" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application.Contracts" Version="2.4.0" />
+
 
   </ItemGroup>
 

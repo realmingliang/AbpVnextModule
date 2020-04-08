@@ -30,6 +30,9 @@ namespace Tudou.Abp.Identity
             public const string Update = Default + ".Update";
             public const string Delete = Default + ".Delete";
             public const string ManagePermissions = Default + ".ManagePermissions";
+            public const string Move = Default + ".Move";
+            public const string ManageRoles = Default + ".ManageRoles";
+            public const string ManageMembers = Default + ".ManageMembers";
         }
 
         public static class UserLookup

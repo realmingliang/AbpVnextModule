@@ -10,8 +10,8 @@ namespace Tudou.Abp.Identity.OrganizationUnits
    public interface IOrganizationUnitAppService : IApplicationService
     {
         Task<ListResultDto<OrganizationUnitDto>> GetOrganizationUnits();
-        //Task<PagedResultDto<OrganizationUnitUserListDto>> GetOrganizationUnitUsers(GetOrganizationUnitUsersInput input);
-        //Task<PagedResultDto<OrganizationUnitRoleListDto>> GetOrganizationUnitRoles(GetOrganizationUnitRolesInput input);
+        Task<PagedResultDto<OrganizationUnitUserListDto>> GetOrganizationUnitUsers(Guid id, PagedResultRequestDto input);
+        Task<PagedResultDto<OrganizationUnitRoleListDto>> GetOrganizationUnitRoles(Guid id, PagedResultRequestDto input);
         Task<OrganizationUnitDto> CreateOrganizationUnit(CreateOrganizationUnitInput input);
         Task<OrganizationUnitDto> MoveOrganizationUnit(Guid id, MoveOrganizationUnitInput input);
         Task<OrganizationUnitDto> UpdateOrganizationUnit(Guid id,UpdateOrganizationUnitInput input);
@@ -26,5 +26,6 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         Task<PagedResultDto<NameValueDto>> FindRoles(FindOrganizationUnitRolesInput input);
 
         Task<PagedResultDto<NameValueDto>> FindUsers(FindOrganizationUnitUsersInput input);
+
     }
 }

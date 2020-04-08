@@ -76,6 +76,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-use": "^14.1.0",
     "umi": "^3.0.14",
     "umi-request": "^1.0.8",
     "use-merge-value": "^1.0.1"

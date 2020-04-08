@@ -25,7 +25,7 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         Task<List<string>> GetRoleNamesAsync(
            Guid id,
            CancellationToken cancellationToken = default
-    );
+        );
         Task<List<string>> GetCurrentUserRoleNamesByOrganizationUnitAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }

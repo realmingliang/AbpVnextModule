@@ -13,12 +13,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.SettingManagement.Application.Contracts\Tudou.Abp.SettingManagement.Application.Contracts.csproj" />
     <ProjectReference Include="..\Tudou.Abp.SettingManagement.Domain\Tudou.Abp.SettingManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Fody" Version="6.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

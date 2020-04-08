@@ -15,20 +15,24 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         protected IdentityRoleManager RoleManager { get; }
         protected IIdentityRoleRepository RoleRepository { get; }
         protected IdentityUserManager UserManager { get; }
-     
+        protected IOrganizationUnitRoleRepository OrganizationUnitRoleRepository { get; }
+        protected IdentityUserOrganizationUnitRepository UserOrganizationUnitRepository { get; }
         protected IIdentityUserRepository UserRepository { get; }
         public OrganizationUnitAppService(
          OrganizationUnitManager organizationUnitManager,
           IOrganizationUnitRepository organizationUnitRepository, IdentityRoleManager roleManager,
             IIdentityRoleRepository roleRepository,
+            IOrganizationUnitRoleRepository organizationUnitRoleRepository,
+             IdentityUserOrganizationUnitRepository userOrganizationUnitRepository,
              IdentityUserManager userManager,
          
             IIdentityUserRepository userRepository)
         {
             OrganizationUnitManager = organizationUnitManager;
             OrganizationUnitRepository = organizationUnitRepository;
+            UserOrganizationUnitRepository = userOrganizationUnitRepository;
             RoleManager = roleManager;
-     
+            OrganizationUnitRoleRepository = organizationUnitRoleRepository;
             RoleRepository = roleRepository;
             UserManager = userManager;
             UserRepository = userRepository;
@@ -46,7 +50,7 @@ namespace Tudou.Abp.Identity.OrganizationUnits
         {
             await OrganizationUnitRepository.DeleteAsync(id);
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async Task<PagedResultDto<NameValueDto>> FindRoles(FindOrganizationUnitRolesInput input)
         {
             var list = await RoleRepository.GetListByOrganizationUnitIdAsync(input.OrganizationUnitId, input.MaxResultCount, input.SkipCount, input.Filter);
@@ -62,7 +66,7 @@ namespace Tudou.Abp.Identity.OrganizationUnits
              );
 
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.ManageMembers)]
         public async Task<PagedResultDto<NameValueDto>> FindUsers(FindOrganizationUnitUsersInput input)
         {
             var list = await UserRepository.GetListByOrganizationUnitIdAsync(input.OrganizationUnitId, input.MaxResultCount, input.SkipCount, input.Filter);
@@ -112,7 +116,7 @@ namespace Tudou.Abp.Identity.OrganizationUnits
             dto.RoleCount = await OrganizationUnitRepository.GetRoleCountAsync(organizationUnit.Id);
             return dto;
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.Move)]
         public async Task<OrganizationUnitDto> MoveOrganizationUnit(Guid id, MoveOrganizationUnitInput input)
         {
             await OrganizationUnitManager.MoveAsync(id, input.NewParentId);
@@ -121,17 +125,17 @@ namespace Tudou.Abp.Identity.OrganizationUnits
                 await OrganizationUnitRepository.GetAsync(id)
                 );
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.ManageMembers)]
         public async Task RemoveUserFromOrganizationUnit(Guid id, RemoveUserFromOrganizationUnitInput input)
         {
             await UserManager.RemoveFromOrganizationUnitAsync(input.UserId, id);
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async Task RemoveRoleFromOrganizationUnit(Guid id, RemoveRoleFromOrganizationUnitInput input)
         {
             await RoleManager.RemoveFromOrganizationUnitAsync(input.RoleId, id);
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.ManageMembers)]
         public async Task AddUsersToOrganizationUnit(Guid id, UsersToOrganizationUnitInput input)
         {
             foreach (var userId in input.UserIds)
@@ -139,7 +143,7 @@ namespace Tudou.Abp.Identity.OrganizationUnits
                 await UserManager.AddToOrganizationUnitAsync(userId, id);
             }
         }
-
+        [Authorize(IdentityPermissions.OrganizationUnits.ManageRoles)]
         public async Task AddRolesToOrganizationUnit(Guid id, RolesToOrganizationUnitInput input)
         {
             foreach (var roleId in input.RoleIds)
@@ -148,5 +152,44 @@ namespace Tudou.Abp.Identity.OrganizationUnits
             }
         }
 
+        public async Task<PagedResultDto<OrganizationUnitUserListDto>> GetOrganizationUnitUsers(Guid id, PagedResultRequestDto input)
+        {
+            var items = from ouUser in await UserOrganizationUnitRepository.GetOuUserListAsync(id, input.MaxResultCount, input.SkipCount)
+                        join user in await UserRepository.GetListAsync() on ouUser.UserId equals user.Id
+                        select new
+                        {
+                            ouUser,
+                            user
+                        };
+            var totalCount = await UserOrganizationUnitRepository.GetOuUserCountAsync(id);
+            return new PagedResultDto<OrganizationUnitUserListDto>(
+              totalCount,
+              items.Select(item =>
+              {
+                  var organizationUnitRoleDto = ObjectMapper.Map<IdentityUser, OrganizationUnitUserListDto>(item.user);
+                  organizationUnitRoleDto.AddedTime = item.ouUser.CreationTime;
+                  return organizationUnitRoleDto;
+              }).ToList());
+        }
+
+        public async Task<PagedResultDto<OrganizationUnitRoleListDto>> GetOrganizationUnitRoles(Guid id, PagedResultRequestDto input)
+        {
+            var items = from ouRole in await OrganizationUnitRoleRepository.GetOuRoleListAsync(id, input.MaxResultCount, input.SkipCount)
+                        join role in await RoleRepository.GetListAsync() on ouRole.RoleId equals role.Id
+                        select new
+                        {
+                            ouRole,
+                            role
+                        };
+            var totalCount = await OrganizationUnitRoleRepository.GetOuRoleCountAsync(id);
+            return new PagedResultDto<OrganizationUnitRoleListDto>(
+              totalCount,
+              items.Select(item =>
+              {
+                  var organizationUnitRoleDto = ObjectMapper.Map<IdentityRole,OrganizationUnitRoleListDto>(item.role);
+                  organizationUnitRoleDto.AddedTime = item.ouRole.CreationTime;
+                  return organizationUnitRoleDto;
+              }).ToList());
+        }
     }
 }

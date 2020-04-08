@@ -18,16 +18,23 @@
     <ProjectReference Include="..\..\..\..\modules\identity\src\Tudou.Abp.Identity.Domain\Tudou.Abp.Identity.Domain.csproj" />
 
     <ProjectReference Include="..\Tudou.Abp.IdentityServer.Domain.Shared\Tudou.Abp.IdentityServer.Domain.Shared.csproj" />
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.Security" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.Caching" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.Validation" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.BackgroundWorkers" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Security" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Validation" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.BackgroundWorkers" Version="2.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityServer4" Version="3.0.2" />
-    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="3.0.2" />
+    <PackageReference Include="IdentityServer4" Version="3.1.2" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Fody" Version="6.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

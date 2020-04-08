@@ -10,8 +10,8 @@ using Tudou.Grace.EntityFrameworkCore;
 namespace Tudou.Grace.Migrations
 {
     [DbContext(typeof(GraceMigrationsDbContext))]
-    [Migration("20200401132439_sss")]
-    partial class sss
+    [Migration("20200406091146_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

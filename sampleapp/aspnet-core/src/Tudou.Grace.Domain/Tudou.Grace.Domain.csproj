@@ -14,14 +14,14 @@
     <ProjectReference Include="..\..\..\..\modules\identity\src\Tudou.Abp.PermissionManagement.Domain.Identity\Tudou.Abp.PermissionManagement.Domain.Identity.csproj" />
     <ProjectReference Include="..\..\..\..\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain\Tudou.Abp.SettingManagement.Domain.csproj" />
     <ProjectReference Include="..\Tudou.Grace.Domain.Shared\Tudou.Grace.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\audit-logging\src\Tudou.Abp.AuditLogging.Domain\Tudou.Abp.AuditLogging.Domain.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\saas\src\Tudou.Abp.Saas.Domain\Tudou.Abp.Saas.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
-    <PackageReference Include="Tudou.Abp.Saas.Domain" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="2.3.0" />
-    <PackageReference Include="Tudou.Abp.AuditLogging.Domain" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="2.4.0" />
 
   </ItemGroup>
 

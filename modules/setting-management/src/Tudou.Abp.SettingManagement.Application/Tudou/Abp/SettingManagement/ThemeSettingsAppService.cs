@@ -23,7 +23,6 @@ namespace Tudou.Abp.SettingManagement
             return new ThemeSettingsDto
             {
                 NavTheme = await _settingProvider.GetOrNullAsync(ThemeSettingNames.NavTheme),
-                PrimaryColor = await _settingProvider.GetOrNullAsync(ThemeSettingNames.PrimaryColor),
                 Layout = await _settingProvider.GetOrNullAsync(ThemeSettingNames.Layout),
                 ContentWidth = await _settingProvider.GetOrNullAsync(ThemeSettingNames.ContentWidth),
                 FixedHeader = Convert.ToBoolean(await _settingProvider.GetOrNullAsync(ThemeSettingNames.FixedHeader)),
@@ -38,8 +37,6 @@ namespace Tudou.Abp.SettingManagement
             if (CurrentUser.Id != null)
             {
                 await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.NavTheme, input.NavTheme);
-                await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.PrimaryColor,
-                    input.PrimaryColor);
                 await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.Layout, input.Layout);
                 await _settingManager.SetForUserAsync(CurrentUser.Id.Value, ThemeSettingNames.ContentWidth,
                     input.ContentWidth);

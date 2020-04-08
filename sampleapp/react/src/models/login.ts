@@ -46,6 +46,7 @@ const Model: LoginModelType = {
         type: 'changeLoginStatus',
         payload: response,
       });
+
       // Login successfully
       if (response.access_token !== undefined) {
         Store.SetToken(response.access_token);
@@ -74,6 +75,7 @@ const Model: LoginModelType = {
       // Note: There may be security issues, please note
       if (window.location.pathname !== '/account/login' && !redirect) {
         yield call(logout);
+
         history.replace({
           pathname: '/account/login',
           search: stringify({

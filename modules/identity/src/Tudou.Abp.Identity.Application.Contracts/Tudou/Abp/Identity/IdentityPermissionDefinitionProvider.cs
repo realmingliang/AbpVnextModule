@@ -28,6 +28,8 @@ namespace Tudou.Abp.Identity
             organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.Update, L("Permission:Edit"));
             organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.Delete, L("Permission:Delete"));
             organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.ManagePermissions, L("Permission:ChangePermissions"));
+            organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.ManageMembers, L("Permission:ManageMembers"));
+            organizationUnitPermission.AddChild(IdentityPermissions.OrganizationUnits.ManageRoles, L("Permission:ManageRoles"));
 
 
             identityGroup

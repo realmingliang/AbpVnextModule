@@ -19,12 +19,6 @@ namespace Tudou.Abp.SettingManagement.ThemeSettings
                    L("Description:Abp.Theme.NavTheme"),
                    true),
                new SettingDefinition(
-                   ThemeSettingNames.PrimaryColor,
-                   "#1890ff",
-                   L("DisplayName:Abp.Theme.NavTheme"),
-                   L("Description:Abp.Theme.NavTheme"),
-                   true),
-               new SettingDefinition(
                    ThemeSettingNames.Layout,
                    "sidemenu",
                    L("DisplayName:Abp.Theme.Layout"),

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col, Card, Tree, Button, message, Tabs, Table } from 'antd';
 import { useRequest } from '@umijs/hooks';
 import { contextMenu, Menu, Item } from 'react-contexify';
-import { getOrganizationUnits, deleteOrganizationUnit } from './service';
+import { getOrganizationUnits, deleteOrganizationUnit, getOrganizationunitUsers } from './service';
 import { OrganizationUnitDto, CreateOrUpdateOrganizationUnitInput } from './data';
 import { createTree } from '@/utils/utils';
 import CreateOrUpdateForm from './components/createOrUpdateForm';
@@ -71,11 +71,14 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({ permissions, dispat
       message.success("删除成功!");
     }
   });
+  const { run: doGetOrganizationUnitUsers } = useRequest(getOrganizationunitUsers, {
+    manual: true,
+  });
   const handleCreate = async () => {
     await setOrganizationUnitItem(initEmptyOrganizationUnit)
-
     await handleModalVisible(true)
   }
+
   const handleDeleteItem = async () => {
     await doDeleteItem(organizationUnitItem.id!);
     await doGetData();
@@ -124,8 +127,8 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({ permissions, dispat
     },
     {
       title: '角色',
-      dataIndex: 'displayName',
-      key: 'displayName',
+      dataIndex: 'name',
+      key: 'name',
     },
     {
       title: '添加时间',
@@ -135,6 +138,7 @@ const OrganizationUnit: React.FC<OrganizationUnitProps> = ({ permissions, dispat
   ]
    const selectTree = async (selectedKeys: any[],info:any) => {
     const { data } = info.node;
+    doGetOrganizationUnitUsers(data.id,{})
     await setOrganizationUnitItem({ displayName: data.displayName, parentId: data.parentId, id: data.id })
   }
 

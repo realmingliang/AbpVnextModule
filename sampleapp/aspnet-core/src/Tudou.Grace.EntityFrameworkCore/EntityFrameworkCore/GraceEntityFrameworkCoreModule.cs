@@ -2,7 +2,6 @@
 using Tudou.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.EntityFrameworkCore.SqlServer;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Tudou.Abp.Identity.EntityFrameworkCore;
 using Tudou.Abp.IdentityServer.EntityFrameworkCore;
@@ -10,6 +9,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Tudou.Abp.SettingManagement.EntityFrameworkCore;
 using Tudou.Abp.Saas.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.SqlServer;
 
 namespace Tudou.Grace.EntityFrameworkCore
 {

@@ -74,6 +74,8 @@
     "Permission:ChangePermissions": "更改权限",
     "Permission:UserManagement": "用户管理",
     "Permission:UserLookup": "用户查询",
+    "Permission:ManageMembers": "组织成员管理",
+    "Permission:ManageRoles": "组织角色管理",
     "DisplayName:Abp.Identity.Password.RequiredLength": "要求长度",
     "DisplayName:Abp.Identity.Password.RequiredUniqueChars": "要求唯一字符数量",
     "DisplayName:Abp.Identity.Password.RequireNonAlphanumeric": "要求非字母数字",

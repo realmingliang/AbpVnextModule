@@ -12,13 +12,14 @@
     <ProjectReference Include="..\..\..\..\modules\identity\src\Tudou.Abp.Identity.HttpApi.Client\Tudou.Abp.Identity.HttpApi.Client.csproj" />
     <ProjectReference Include="..\..\..\..\modules\setting-management\src\Tudou.Abp.SettingManagement.HttpApi.Client\Tudou.Abp.SettingManagement.HttpApi.Client.csproj" />
     <ProjectReference Include="..\Tudou.Grace.Application.Contracts\Tudou.Grace.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\audit-logging\src\Tudou.Abp.AuditLogging.HttpApi.Client\Tudou.Abp.AuditLogging.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\..\..\..\modules\saas\src\Tudou.Abp.Saas.HttpApi.Client\Tudou.Abp.Saas.HttpApi.Client.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Tudou.Abp.Saas.HttpApi.Client" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="2.3.0" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="2.3.0" />
-    <PackageReference Include="Tudou.Abp.AuditLogging.HttpApi.Client" Version="2.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="2.4.0" />
 
   </ItemGroup>
 

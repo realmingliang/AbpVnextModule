@@ -8,7 +8,6 @@ const SettingNames = {
     autoHideHeader:"Abp.Theme.AutoHideHeader",
     fixSiderbar:"Abp.Theme.FixSiderbar",
     colorWeak:"Abp.Theme.ColorWeak",
-    title:"Abp.Theme.Title",
   },
 
 }
