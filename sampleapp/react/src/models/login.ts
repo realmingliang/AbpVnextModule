@@ -6,6 +6,7 @@ import { login, logout } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';
 import AppConsts from "../utils/appconst";
 import Store from "../utils/store";
+import { getConfiguration } from '@/services/global';
 
 export interface StateType {
   status?: 'ok' | 'error';
@@ -49,8 +50,9 @@ const Model: LoginModelType = {
 
       // Login successfully
       if (response.access_token !== undefined) {
+
         Store.SetToken(response.access_token);
-        callback();
+        yield callback();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
         let { redirect } = params as { redirect: string };

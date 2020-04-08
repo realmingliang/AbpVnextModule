@@ -1,13 +1,11 @@
-import React,{useCallback} from 'react';
+import React from 'react';
 import { Redirect, useModel } from 'umi';
 import { stringify } from 'querystring';
 
-const SecurityLayout: React.FC<null> = props => {
+const SecurityLayout: React.FC<null> =  props => {
   const { children } = props;
-  const { initialState,refresh} = useModel('@@initialState');
-  useCallback(()=>{
-    refresh()
-  },[])
+  const { initialState } = useModel('@@initialState');
+
   const isLogin = initialState?.currentUser && initialState.currentUser.isAuthenticated;
   const queryString = stringify({
     redirect: window.location.href,
