@@ -38,12 +38,11 @@
 
 - umi-plugin-abp-react  react插件集
 
-   包含:umi-plugin-abp-setting 
+            包含:umi-plugin-abp-setting 
 
 ​                umi-plugin-abp-feature
 
 ​                @umijs/preset-react
 
-- ToDo: umi-plugin-abp-dtogenerate 
-- ToDo: umi-plugin-abp-servicegenerate
+
 
