@@ -1,0 +1,47 @@
+{
+  "name": "umi-preset-abp-react",
+  "version": "2.3.5",
+  "description": "react",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaoliang1314/AbpVnextModule/plugins"
+  },
+  "keywords": [
+    "umi"
+  ],
+  "author": {
+    "name": "tudou",
+    "email": "171372668@qq.com",
+    "url": "https://github.com/xiaoliang1314"
+  },
+  "license": "MIT",
+  "bugs": "https://github.com/xiaoliang1314/AbpVnextModule/issues",
+  "homepage": "https://github.com/xiaoliang1314/AbpVnextModule/plugins#readme",
+  "peerDependencies": {
+    "umi": "3.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@umijs/plugin-access": "2.3.0",
+    "umi-plugin-abp-feature": "2.3.4",
+    "umi-plugin-abp-setting": "2.3.4",
+    "@umijs/plugin-analytics": "0.2.0",
+    "@umijs/plugin-antd": "0.4.3",
+    "@umijs/plugin-crossorigin": "1.1.0",
+    "@umijs/plugin-dva": "0.6.5",
+    "@umijs/plugin-initial-state": "2.2.0",
+    "@umijs/plugin-layout": "0.7.0",
+    "@umijs/plugin-locale": "0.4.4",
+    "@umijs/plugin-model": "2.2.0",
+    "@umijs/plugin-request": "2.3.2",
+    "@umijs/plugin-test": "1.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Application.Contracts.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.csprojAssemblyReference.cache
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.csproj.CopyComplete
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\account\src\Tudou.Abp.Account.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.Account.Application.Contracts.pdb

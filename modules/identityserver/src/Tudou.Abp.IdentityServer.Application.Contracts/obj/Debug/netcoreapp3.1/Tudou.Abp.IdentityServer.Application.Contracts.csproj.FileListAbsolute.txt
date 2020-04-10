@@ -1,0 +1,8 @@
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application.Contracts\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.Contracts.pdb

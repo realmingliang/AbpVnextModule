@@ -35,6 +35,7 @@ namespace Tudou.Abp.Saas.EntityFrameworkCore
             builder.Entity<SaasTenantConnectionString>(b =>
             {
                 b.ToTable(options.TablePrefix + "SaasTenantConnectionStrings", options.Schema);
+                b.ConfigureByConvention();
                 b.HasKey(x => new { x.TenantId, x.Name });
                 b.Property(cs => cs.Name).IsRequired().HasMaxLength(SaasTenantConnectionStringConsts.MaxNameLength);
                 b.Property(cs => cs.Value).IsRequired().HasMaxLength(SaasTenantConnectionStringConsts.MaxValueLength);

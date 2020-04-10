@@ -1,0 +1,13 @@
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\bin\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\bin\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\bin\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\bin\Debug\netstandard2.0\Tudou.Abp.IdentityServer.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\bin\Debug\netstandard2.0\Tudou.Abp.IdentityServer.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.csprojAssemblyReference.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.csproj.CopyComplete
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.PermissionManagement.Domain.IdentityServer\obj\Debug\netstandard2.0\Tudou.Abp.PermissionManagement.Domain.IdentityServer.pdb

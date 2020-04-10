@@ -1,0 +1,13 @@
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.csproj.CopyComplete
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\setting-management\src\Tudou.Abp.SettingManagement.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.SettingManagement.Domain.Shared.csprojAssemblyReference.cache

@@ -8,8 +8,8 @@ import ProLayout, {
   BasicLayoutProps as ProLayoutProps,
   DefaultFooter,
 } from '@ant-design/pro-layout';
-import React, { useEffect } from 'react';
-import { Link,useModel } from 'umi';
+import React from 'react';
+import { Link,useSetting,useModel } from 'umi';
 import { Dispatch } from 'redux';
 import { connect } from 'dva';
 import { GithubOutlined } from '@ant-design/icons';
@@ -121,6 +121,9 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
    * constructor
    */
   const { initialState } = useModel('@@initialState');
+  // useSetting
+  const settings= useSetting();
+  console.log(settings);
   let themeSettings=InitThemeSettings(initialState!.setting.values as any);
   /**
    * init variables

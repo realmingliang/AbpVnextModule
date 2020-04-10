@@ -39,11 +39,6 @@
     "tsc": "tsc",
     "ui": "umi ui"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged"
-    }
-  },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
@@ -95,7 +90,7 @@
     "@umijs/fabric": "^2.0.5",
     "@umijs/plugin-blocks": "^2.0.5",
     "@umijs/preset-ant-design-pro": "^1.0.1",
-    "@umijs/preset-react": "^1.4.8",
+    "umi-preset-abp-react": "^2.3.5",
     "@umijs/preset-ui": "^2.0.9",
     "carlo": "^0.9.46",
     "chalk": "^4.0.0",

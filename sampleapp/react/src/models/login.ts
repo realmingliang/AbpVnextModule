@@ -6,7 +6,7 @@ import { login, logout } from '@/services/login';
 import { getPageQuery } from '@/utils/utils';
 import AppConsts from "../utils/appconst";
 import Store from "../utils/store";
-import { getConfiguration } from '@/services/global';
+
 
 export interface StateType {
   status?: 'ok' | 'error';

@@ -1,0 +1,10 @@
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.csprojAssemblyReference.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.Domain.Shared\obj\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.pdb

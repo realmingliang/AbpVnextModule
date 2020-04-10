@@ -1,0 +1,31 @@
+{
+  "name": "umi-plugin-abp-setting",
+  "version": "2.3.4",
+  "description": "setting",
+  "keywords": [
+    "umi",
+    "umi3",
+    "umi-plugin"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "tudou",
+    "email": "171372668@qq.com",
+    "url": "https://github.com/xiaoliang1314"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+
+  "peerDependencies": {
+    "@umijs/plugin-initial-state": "2.x",
+    "@umijs/plugin-model": "2.x",
+    "umi": "3.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

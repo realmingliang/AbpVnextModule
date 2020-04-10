@@ -1,0 +1,10 @@
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\bin\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.dll
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\audit-logging\src\Tudou.Abp.AuditLogging.Application.Contracts\obj\Debug\netstandard2.0\Tudou.Abp.AuditLogging.Application.Contracts.csprojAssemblyReference.cache

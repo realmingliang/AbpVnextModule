@@ -1,0 +1,13 @@
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\bin\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.csprojAssemblyReference.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.csproj.CopyComplete
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identity\src\Tudou.Abp.Identity.Domain\obj\Debug\netstandard2.0\Tudou.Abp.Identity.Domain.pdb

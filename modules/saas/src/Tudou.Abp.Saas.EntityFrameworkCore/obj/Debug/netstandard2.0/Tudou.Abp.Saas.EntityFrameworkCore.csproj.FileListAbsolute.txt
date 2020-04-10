@@ -1,0 +1,15 @@
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.dll
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.dll
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\bin\Debug\netstandard2.0\Tudou.Abp.Saas.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.csprojAssemblyReference.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.csproj.CopyComplete
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.dll
+C:\Users\17137\Desktop\AbpVnext\modules\saas\src\Tudou.Abp.Saas.EntityFrameworkCore\obj\Debug\netstandard2.0\Tudou.Abp.Saas.EntityFrameworkCore.pdb

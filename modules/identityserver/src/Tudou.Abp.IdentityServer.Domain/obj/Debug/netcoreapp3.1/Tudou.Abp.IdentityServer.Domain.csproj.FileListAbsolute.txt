@@ -1,0 +1,17 @@
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.deps.json
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.Identity.Domain.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.Identity.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.Shared.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.Identity.Domain.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\bin\Debug\netcoreapp3.1\Tudou.Abp.Identity.Domain.Shared.pdb
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.csprojAssemblyReference.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.AssemblyInfoInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.AssemblyInfo.cs
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.csproj.CoreCompileInputs.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.csproj.Fody.CopyLocal.cache
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.csproj.CopyComplete
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.dll
+C:\Users\17137\Desktop\AbpVnext\modules\identityserver\src\Tudou.Abp.IdentityServer.Domain\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Domain.pdb
