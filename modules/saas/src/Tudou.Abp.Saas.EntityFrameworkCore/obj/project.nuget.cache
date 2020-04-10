@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pS8CrAUWAeYOnXbdmnHelCwHVRF8TBZlrCVASJ0ZhUXC7otUB4PoiERYZn+AvG8SK5OnGSnx6egdQ8lS1C+Yog==",
+  "dgSpecHash": "N6sxjLeVXREW5Z/EGqpsbOnHhOz9kUrhlFMRYuVECPejhxAMwHimAqjAqArQpFUd88JxvenLtDWGpvb9zdfQeA==",
   "success": true,
   "projectFilePath": "C:\\Users\\17137\\Desktop\\AbpVnext\\modules\\saas\\src\\Tudou.Abp.Saas.EntityFrameworkCore\\Tudou.Abp.Saas.EntityFrameworkCore.csproj",
   "expectedPackageFiles": [

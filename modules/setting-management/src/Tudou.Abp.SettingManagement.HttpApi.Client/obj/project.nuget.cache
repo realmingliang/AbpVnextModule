@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/6QF15jTUgwK3sNrRfoMhCcTwd3tB+ynE07UYmcAU1GY2JtDBVJQRAlF2JCoBw+tWiPsBc7Cdm+haVuXmLHAVg==",
+  "dgSpecHash": "SmSRXlK/pdMFerBBTrWCihYQMEscEApF3aWQmqrTlvAkSJVc49fezvChlsXdNcEGcYzLnxLnxqStuTiwUPe9xw==",
   "success": true,
   "projectFilePath": "C:\\Users\\17137\\Desktop\\AbpVnext\\modules\\setting-management\\src\\Tudou.Abp.SettingManagement.HttpApi.Client\\Tudou.Abp.SettingManagement.HttpApi.Client.csproj",
   "expectedPackageFiles": [

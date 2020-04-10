@@ -90,7 +90,7 @@
     "@umijs/fabric": "^2.0.5",
     "@umijs/plugin-blocks": "^2.0.5",
     "@umijs/preset-ant-design-pro": "^1.0.1",
-    "umi-preset-abp-react": "^2.3.5",
+    "umi-preset-abp-react": "^2.4.1",
     "@umijs/preset-ui": "^2.0.9",
     "carlo": "^0.9.46",
     "chalk": "^4.0.0",

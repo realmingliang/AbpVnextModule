@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VWhEyS6tIaTKgFs4FyTEZQkRts993It79vdfD3Z70qNSL1wtj1ET0L9AiL2L08ak6p9nRyEuyjHxcCi8rNh8gQ==",
+  "dgSpecHash": "Tz29nZXP1UQJcMvqsAmTesoNGqpbUJ1ukY59zqOf/rBMweWGEAiipFHqkYDZTtiaK5c+QVI/5HecqMqiz5XL2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\17137\\Desktop\\AbpVnext\\modules\\setting-management\\src\\Tudou.Abp.SettingManagement.Application\\Tudou.Abp.SettingManagement.Application.csproj",
   "expectedPackageFiles": [

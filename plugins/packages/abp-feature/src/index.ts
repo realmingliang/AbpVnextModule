@@ -6,7 +6,7 @@ import getFeatureContent from './utils/getContextContent';
 import getRootContainerContent from './utils/getRootContainerContent';
 import { checkIfHasDefaultExporting } from './utils';
 
-const feature_DIR = 'plugin-feature'; // plugin-feature 插件创建临时文件的专有文件夹
+const feature_DIR = 'plugin-abp-feature'; // plugin-feature 插件创建临时文件的专有文件夹
 
 export default function(api: IApi) {
   const umiTmpDir = api.paths.absTmpPath;

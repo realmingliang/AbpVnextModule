@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xa3atLJD+vk+A2dRjElQOnStukBiwvMTqjfU74bIVTWjve6s0POkic/oM88TDBgNUWoqwAq9VRZp5y1mn9EHqQ==",
+  "dgSpecHash": "wUrkhy6oLgj67tjfTWmNS0AdpfCsjBR4anK7VjPwMDqpq/bTXOFPG5/CygGjFDd+FmMinaH9PjkuYmZdUtLvNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\17137\\Desktop\\AbpVnext\\modules\\saas\\src\\Tudou.Abp.Saas.HttpApi.Client\\Tudou.Abp.Saas.HttpApi.Client.csproj",
   "expectedPackageFiles": [

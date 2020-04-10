@@ -1,12 +1,12 @@
 export default function() {
   return `\
 import React from 'react';
-import accessFactory from '@/access';
+import featureFactory from '@/feature';
 
-export type AccessInstance = ReturnType<typeof accessFactory>;
+export type FeatureInstance = ReturnType<typeof featureFactory>;
 
-const AccessContext = React.createContext<AccessInstance>(null!);
+const FeatureContext = React.createContext<FeatureInstance>(null!);
 
-export default AccessContext;
+export default FeatureContext;
 `;
 }

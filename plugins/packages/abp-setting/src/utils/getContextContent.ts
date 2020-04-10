@@ -1,7 +1,7 @@
 export default function() {
   return `\
 import React from 'react';
-import settingFactory from '@/access';
+import settingFactory from '@/setting';
 
 export type SettingInstance = ReturnType<typeof settingFactory>;
 

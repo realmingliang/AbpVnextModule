@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vzUMUl3aF5C4yr85x2b57uDGsmP6igq0zw+/V07vAWj5ILU96iQKtI1ggdGpBMMDpj+pZj370+E1o0mFZogNeQ==",
+  "dgSpecHash": "aGUT0avtKuKuw5jIJMBJoy8nMr99ltWICcoFJ3jm0ON6jvfScAzgp7jA5jsOHu+GHb3+Ym8QEkGbkRNngJFTnQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\17137\\Desktop\\AbpVnext\\modules\\setting-management\\src\\Tudou.Abp.SettingManagement.EntityFrameworkCore\\Tudou.Abp.SettingManagement.EntityFrameworkCore.csproj",
   "expectedPackageFiles": [
