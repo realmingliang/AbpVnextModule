@@ -1,9 +1,0 @@
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.deps.json
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.dll
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\bin\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.pdb
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.csprojAssemblyReference.cache
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.AssemblyInfoInputs.cache
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.AssemblyInfo.cs
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.csproj.CoreCompileInputs.cache
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.dll
-C:\Users\17137\Desktop\AbpVnext\modules\identityServer\src\Tudou.Abp.IdentityServer.Application\obj\Debug\netcoreapp3.1\Tudou.Abp.IdentityServer.Application.pdb

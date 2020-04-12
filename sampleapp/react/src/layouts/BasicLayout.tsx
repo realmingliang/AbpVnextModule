@@ -9,7 +9,7 @@ import ProLayout, {
   DefaultFooter,
 } from '@ant-design/pro-layout';
 import React from 'react';
-import { Link,useSetting,useModel } from 'umi';
+import { Link,useModel, useLocale } from 'umi';
 import { Dispatch } from 'redux';
 import { connect } from 'dva';
 import { GithubOutlined } from '@ant-design/icons';
@@ -52,6 +52,7 @@ export type BasicLayoutContext = { [K in 'location']: BasicLayoutProps[K] } & {
  */
 
 const menuDataRender = (menuList: MenuDataItem[]): MenuDataItem[] =>
+
   menuList.map(item => {
     const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
     return Authorized.check(item.authority, localItem, null) as MenuDataItem;
@@ -121,9 +122,7 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
    * constructor
    */
   const { initialState } = useModel('@@initialState');
-  // useSetting
-  const settings= useSetting();
-  console.log(settings);
+
   let themeSettings=InitThemeSettings(initialState!.setting.values as any);
   /**
    * init variables

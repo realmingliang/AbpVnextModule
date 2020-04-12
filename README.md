@@ -14,31 +14,8 @@
 
 - identity 组织机构管理
 
-### 插件列表
-
-- umi-plugin-abp-setting 设置
+### Docs:
 
 
-         启用方式:有src/setting.ts时启用
-         使用:    import { useSetting } from 'umi'
-                  const setting= useSetting();
-                  const value=setting[settingName];
-
-- umi-plugin-abp-feature 功能管理
-
-         启用方式:有src/feature.ts时启用
-         使用:    import { useFeature,Feature} from 'umi'
-                  const feature= useFeature();
-  
- 
-
-
-- umi-plugin-abp-react  react插件集
-
-            包含:umi-plugin-abp-setting 
-                 umi-plugin-abp-feature
-                 @umijs/preset-react
-
-
-
+https://xiaoliang1314.github.io/
 

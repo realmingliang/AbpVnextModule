@@ -1,7 +1,7 @@
 
 import { Alert, Checkbox } from 'antd';
 import React, { useState } from 'react';
-import { Link, ConnectProps, useModel } from 'umi';
+import { Link, ConnectProps, useModel, useLocale } from 'umi';
 import { connect } from 'dva';
 import { StateType } from '@/models/login';
 import { LoginParamsType } from '@/services/login';
@@ -33,68 +33,61 @@ const Login: React.FC<LoginProps> = props => {
   const { userLogin = {}, submitting } = props;
   const { status } = userLogin;
   const [autoLogin, setAutoLogin] = useState(true);
-  const { initialState,refresh} = useModel('@@initialState');
-  const {multiTenancy} = initialState!;
+  const { initialState, refresh } = useModel('@@initialState');
+  const { multiTenancy } = initialState!;
   const handleSubmit = async (values: LoginParamsType) => {
     const { dispatch } = props;
 
-   await dispatch!({
+    await dispatch!({
       type: 'login/login',
       payload: { ...values },
-      callback: async ()=>{
-       await refresh();
+      callback: async () => {
+        await refresh();
       }
     });
   };
 
-
+  const intl = useLocale("AbpAccount")
   return (
     <div className={styles.main}>
       {
         multiTenancy?.isEnabled ? <TenantsSelect /> : null
       }
       <LoginFrom activeKey='account' onSubmit={handleSubmit}>
-        <Tab key="account" tab="账户密码登录">
+        <Tab key="account" >
           {status === 'error' && !submitting && (
-            <LoginMessage content="账户或密码错误（admin/ant.design）" />
+            <LoginMessage content={intl("InvalidUserNameOrPassword")} />
           )}
           <UserName
             name="userNameOrEmailAddress"
-            placeholder="用户名或邮箱"
+            placeholder={intl("UserNameOrEmailAddress")}
             rules={[
               {
                 required: true,
-                message: '请输入用户名!',
+                message: intl("ThisFieldIsRequired"),
               },
             ]}
           />
           <Password
             name="password"
-            placeholder="密码"
+            placeholder={intl("Password")}
             rules={[
               {
                 required: true,
-                message: '请输入密码！',
+                message: intl("ThisFieldIsRequired"),
               },
             ]}
           />
         </Tab>
         <div>
           <Checkbox checked={autoLogin} onChange={e => setAutoLogin(e.target.checked)}>
-            自动登录
+            {intl("RememberMe")}
           </Checkbox>
-          <a
-            style={{
-              float: 'right',
-            }}
-          >
-            忘记密码
-          </a>
         </div>
-        <Submit loading={submitting}>登录</Submit>
+        <Submit loading={submitting}>{intl("Login")}</Submit>
         <div className={styles.other}>
           <Link className={styles.register} to="/user/register">
-            注册账户
+            {intl("Register")}
           </Link>
         </div>
       </LoginFrom>

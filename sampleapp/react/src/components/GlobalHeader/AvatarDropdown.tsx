@@ -1,8 +1,8 @@
-import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
+import { LogoutOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Menu, Spin } from 'antd';
 import { ClickParam } from 'antd/es/menu';
 import React from 'react';
-import { history, ConnectProps, useModel, connect } from 'umi';
+import { history, ConnectProps, useModel, connect, useLocale } from 'umi';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 
@@ -10,7 +10,7 @@ export interface GlobalHeaderRightProps extends Partial<ConnectProps> {
   menu?: boolean;
 }
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = props => {
-  const { dispatch, menu } = props;
+  const { dispatch } = props;
   const { initialState } = useModel('@@initialState');
 
   const { currentUser } = initialState!
@@ -27,24 +27,18 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = props => {
       history.push('/accountsettings')
     }
   };
+  const intl = useLocale("AbpAccount")
   const menuHeaderDropdown = (
     <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
-      {menu && (
-        <Menu.Item key="center">
-          <UserOutlined />
-          个人中心
-        </Menu.Item>
-      )}
-
         <Menu.Item key="settings">
           <SettingOutlined />
-          个人设置
+          {intl("ManageYourProfile")}
         </Menu.Item>
         <Menu.Divider />
 
       <Menu.Item key="logout">
         <LogoutOutlined />
-        退出登录
+        {intl("Logout")}
       </Menu.Item>
     </Menu>
   );

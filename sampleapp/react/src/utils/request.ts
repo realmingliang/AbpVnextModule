@@ -63,12 +63,15 @@ request.interceptors.request.use((url, options) => {
   const token = Store.GetToken();
   const language = Store.GetLanguage();
   const tenantId= Store.GetTenantId();
+  options.headers={
+    ...options.headers,
+    "Accept-Language":language===null?"zh-Hans":language,
+  }
   if (token) {
     options = {
       ...options,
       headers: {
         ...options.headers,
-        "Accept-Language":language===null?"zh-Hans":language,
         Authorization: `Bearer ${token}`,
       },
     }

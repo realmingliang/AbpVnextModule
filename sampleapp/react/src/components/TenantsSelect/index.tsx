@@ -1,17 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Modal, Form, Input } from "antd";
-import { ConnectProps, ConnectState } from "@/models/connect";
-import { ApplicationConfiguration } from "@/models/global";
-import { connect } from 'dva';
 import { useRequest } from '@umijs/hooks'
 import { getTenantByName } from "@/services/tenant";
 import Store from "../../utils/store";
+import { useModel, useLocale } from "umi";
 
-interface TenantsSelectProps extends ConnectProps {
-  tenant?: ApplicationConfiguration.CurrentTenant;
-}
-const TenantsSelect: React.FC<TenantsSelectProps> = props => {
-  const { tenant } = props;
+const TenantsSelect: React.FC = () => {
+  const { initialState } = useModel("@@initialState");
   const [modalVisible, handleModalVisible] = useState<boolean>(false);
   const { run: changeTenant } = useRequest(getTenantByName, {
     manual: true,
@@ -20,15 +15,17 @@ const TenantsSelect: React.FC<TenantsSelectProps> = props => {
         Store.SetTenantId(result.tenantId)
       }
       handleModalVisible(false);
-      window.location.reload();
     }
   });
+  const intl = useLocale("AbpSaas")
+  const AbpUiMultiTenancy=useLocale("AbpUiMultiTenancy")
   const [form] = Form.useForm();
+  const { currentTenant:tenant} =initialState!;
   const triggerRender = () => {
-    const tenantName = tenant === null || tenant?.name == null || tenant === undefined ? '未选择' : tenant!.name;
+    const tenantName = tenant === null || tenant?.name == null || tenant === undefined ? AbpUiMultiTenancy("NotSelected") : tenant!.name;
     return (
       <div style={{ textAlign: 'center' }}>
-        当前租户名称:{tenantName}(<a href="#" onClick={() => handleModalVisible(true)}>切换</a>)
+        {intl("TenantName")}:{tenantName}(<a href="#" onClick={() => handleModalVisible(true)}>{AbpUiMultiTenancy("Switch")}</a>)
       </div>
     )
   }
@@ -41,20 +38,20 @@ const TenantsSelect: React.FC<TenantsSelectProps> = props => {
           changeTenant(values.tenantName);
         } else {
           Store.SetTenantId("");
-          window.location.reload();
         }
+        window.location.reload();
       })
   }
   return (
     <Fragment>
       {triggerRender()}
       <Modal
-        title="切换租户"
+        title={AbpUiMultiTenancy("SwitchTenant")}
         onOk={modalOkHandler}
         visible={modalVisible}
         onCancel={() => handleModalVisible(false)}>
         <Form name="change_tenant" form={form} layout='vertical'>
-          <Form.Item name="tenantName" label="租户名称">
+          <Form.Item name="tenantName" label={intl("TenantName")}>
             <Input />
           </Form.Item>
         </Form>
@@ -63,6 +60,4 @@ const TenantsSelect: React.FC<TenantsSelectProps> = props => {
   )
 }
 
-export default connect(({ global }: ConnectState) => ({
-  tenant: global.applicationConfiguration?.currentTenant
-}))(TenantsSelect);
+export default TenantsSelect;

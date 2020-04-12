@@ -46,8 +46,28 @@ export namespace ApplicationConfiguration {
   export interface Localization {
     values: LocalizationValue;
     languages: Language[];
+    currentCulture:CurrentCultureDto;
   }
-
+  export interface CurrentCultureDto{
+    displayName:string;
+    englishName:string;
+    threeLetterIsoLanguageName:string;
+    twoLetterIsoLanguageName:string;
+    isRightToLeft:string;
+    cultureName:string;
+    name:string;
+    nativeName:string;
+    dateTimeFormat:DateTimeFormatDto
+  }
+  export interface DateTimeFormatDto{
+    calendarAlgorithmType:string;
+    calendarAlgorithmType:string;
+    calendarAlgorithmType:string;
+    fullDateTimePattern:string;
+    fullDateTimePattern:string;
+    fullDateTimePattern:string;
+    fullDateTimePattern:string;
+  }
   export interface LocalizationValue {
     [key: string]: { [key: string]: string };
   }

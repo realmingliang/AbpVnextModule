@@ -2,31 +2,26 @@ import { GlobalOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { ClickParam } from 'antd/es/menu';
 import React from 'react';
-import { getLocale } from 'umi'
+import { useModel } from 'umi'
 import classNames from 'classnames';
-import { ConnectState } from '@/models/connect';
-import { connect } from 'dva';
-import { ApplicationConfiguration } from '@/models/global';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 import Store from "../../utils/store";
 
 interface SelectLangProps {
   className?: string;
-  localization?: ApplicationConfiguration.Localization;
 }
 
 const SelectLang: React.FC<SelectLangProps> = props => {
-  const { className, localization } = props;
-  const selectedLang = getLocale();
-
+  const { className } = props;
+  const { initialState } = useModel("@@initialState");
   const changeLang = ({ key }: ClickParam): void => {
     Store.SetLanguage(key);
     window.location.reload();
   };
-
+  const { localization } = initialState!;
   const langMenu = (
-    <Menu className={styles.menu} selectedKeys={[selectedLang]} onClick={changeLang}>
+    <Menu className={styles.menu} selectedKeys={[localization.currentCulture.cultureName]} onClick={changeLang}>
       {localization?.languages.map(locale => (
         <Menu.Item key={locale.cultureName}>
           <span role="img" aria-label={locale.displayName}>
@@ -45,6 +40,4 @@ const SelectLang: React.FC<SelectLangProps> = props => {
     </HeaderDropdown>
   );
 };
-export default connect(({ global }: ConnectState) => ({
-  localization:global.applicationConfiguration?.localization
-}))(SelectLang);
+export default SelectLang;

@@ -11,6 +11,7 @@ import CreateForm from './components/createForm';
 import EditForm from './components/editForm';
 import { SaasEditionDto } from "../editions/data.d";
 import { queryEditions } from '../editions/service';
+import { useLocale } from 'umi';
 
 
 const initTenantEmpty:SaasTenantDto={id:"",name:"",editionId:"",editionName:""}
@@ -38,7 +39,7 @@ const Tenants: React.FC = () => {
       reloadTable();
     }
   });
-
+  const intl = useLocale("AbpSaas")
   const handleEditTenant = async (item: SaasTenantDto) => {
     await doGetEditions();
     await setEditTenant(item)
@@ -68,11 +69,11 @@ const Tenants: React.FC = () => {
         </Dropdown>
     },
     {
-      title: '租户名称',
+      title: intl("TenantName"),
       dataIndex: 'name',
     },
     {
-      title: '版本名称',
+      title: intl("EditionName"),
       dataIndex: 'editionName',
     }
   ]

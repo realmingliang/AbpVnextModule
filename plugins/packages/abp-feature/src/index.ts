@@ -2,7 +2,7 @@ import { IApi } from 'umi';
 import { join } from 'path';
 import getContextContent from './utils/getContextContent';
 import getFeatrueProviderContent from './utils/getFeatureProviderContent';
-import getFeatureContent from './utils/getContextContent';
+import getFeatureContent from './utils/getFeatureContent';
 import getRootContainerContent from './utils/getRootContainerContent';
 import { checkIfHasDefaultExporting } from './utils';
 
@@ -11,11 +11,11 @@ const feature_DIR = 'plugin-abp-feature'; // plugin-feature 插件创建临时�
 export default function(api: IApi) {
   const umiTmpDir = api.paths.absTmpPath;
   const srcDir = api.paths.absSrcPath;
-  const settingFilePath = api.utils.winPath(join(srcDir!, 'feature'));
+  const featureFilePath = api.utils.winPath(join(srcDir!, 'feature'));
 
   api.onGenerateFiles(() => {
     // 判断 feature 工厂函数存在并且 default 暴露了一个函数
-    if (checkIfHasDefaultExporting(settingFilePath)) {
+    if (checkIfHasDefaultExporting(featureFilePath)) {
       // 创建 feature 的 context 以便跨组件传递 feature 实例
       api.writeTmpFile({
         path: `${feature_DIR}/context.ts`,
@@ -42,7 +42,7 @@ export default function(api: IApi) {
     }
   });
 
-  if (checkIfHasDefaultExporting(settingFilePath)) {
+  if (checkIfHasDefaultExporting(featureFilePath)) {
     // 增加 rootContainer 运行时配置
     api.addRuntimePlugin(() =>
       api.utils.winPath(join(umiTmpDir!, feature_DIR, 'rootContainer.ts')),
@@ -56,8 +56,8 @@ export default function(api: IApi) {
     ]);
 
     api.addTmpGenerateWatcherPaths(() => [
-      `${settingFilePath}.ts`,
-      `${settingFilePath}.js`,
+      `${featureFilePath}.ts`,
+      `${featureFilePath}.js`,
     ]);
   }
 }
