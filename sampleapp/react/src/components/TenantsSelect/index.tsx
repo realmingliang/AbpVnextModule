@@ -17,7 +17,6 @@ const TenantsSelect: React.FC = () => {
       handleModalVisible(false);
     }
   });
-  const intl = useLocale("AbpSaas")
   const AbpUiMultiTenancy=useLocale("AbpUiMultiTenancy")
   const [form] = Form.useForm();
   const { currentTenant:tenant} =initialState!;
@@ -25,7 +24,7 @@ const TenantsSelect: React.FC = () => {
     const tenantName = tenant === null || tenant?.name == null || tenant === undefined ? AbpUiMultiTenancy("NotSelected") : tenant!.name;
     return (
       <div style={{ textAlign: 'center' }}>
-        {intl("TenantName")}:{tenantName}(<a href="#" onClick={() => handleModalVisible(true)}>{AbpUiMultiTenancy("Switch")}</a>)
+        {AbpUiMultiTenancy("TenantName")}:{tenantName}(<a href="#" onClick={() => handleModalVisible(true)}>{AbpUiMultiTenancy("Switch")}</a>)
       </div>
     )
   }
@@ -51,7 +50,7 @@ const TenantsSelect: React.FC = () => {
         visible={modalVisible}
         onCancel={() => handleModalVisible(false)}>
         <Form name="change_tenant" form={form} layout='vertical'>
-          <Form.Item name="tenantName" label={intl("TenantName")}>
+          <Form.Item name="tenantName" label={AbpUiMultiTenancy("TenantName")}>
             <Input />
           </Form.Item>
         </Form>

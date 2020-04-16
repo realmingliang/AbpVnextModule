@@ -1,33 +1,28 @@
-import { Modal, Form, Input, Checkbox, message, Button } from 'antd';
+import { Modal, Form, Input, Checkbox, Button } from 'antd';
 import React from 'react';
-import { useRequest } from '@umijs/hooks';
 import { IdentityRoleDto } from '../data';
-import { createRole, updateRole } from '../service';
+import { Dispatch } from 'redux';
+import { connect } from 'umi';
 
-interface CreateOrUpdateFormProps {
+interface CreateOrUpdateFormProps  {
   visible: boolean;
   onCancel: () => void;
   editRole?: IdentityRoleDto;
+  dispatch?:Dispatch
 }
 const CreateOrUpdateForm: React.FC<CreateOrUpdateFormProps> = props => {
-  const { visible, onCancel, editRole } = props;
-  const { run: create } = useRequest(createRole, {
-    manual: true,
-    onSuccess: async () => {
-      message.success("操作成功!")
-    }
-  })
-  const { run: update } = useRequest(updateRole, {
-    manual: true,
-    onSuccess: async () => {
-      message.success("保存成功!")
-    }
-  })
+  const { visible, onCancel, editRole,dispatch } = props;
   const formFinish = (values: any) => {
     if (editRole) {
-      update(editRole.id, { ...values as any, concurrencyStamp: editRole.concurrencyStamp });
+      dispatch!({
+        type: 'identityRole/updateRole',
+        payload:{id:editRole.id,data:{...values, concurrencyStamp: editRole.concurrencyStamp}}
+      })
     } else {
-      create(values as any)
+      dispatch!({
+        type: 'identityRole/createRole',
+        payload: values
+      })
     }
     onCancel();
   }
@@ -59,4 +54,4 @@ const CreateOrUpdateForm: React.FC<CreateOrUpdateFormProps> = props => {
     </Modal>
   );
 };
-export default CreateOrUpdateForm;
+export default connect()(CreateOrUpdateForm);

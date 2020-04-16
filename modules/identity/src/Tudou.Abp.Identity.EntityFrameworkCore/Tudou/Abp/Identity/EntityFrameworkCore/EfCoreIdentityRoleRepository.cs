@@ -20,7 +20,7 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
         }
 
         public virtual async Task<IdentityRole> FindByNormalizedNameAsync(
-            string normalizedRoleName, 
+            string normalizedRoleName,
             bool includeDetails = true,
             CancellationToken cancellationToken = default)
         {
@@ -30,9 +30,9 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
         }
 
         public virtual async Task<List<IdentityRole>> GetListAsync(
-            string sorting = null, 
-            int maxResultCount = int.MaxValue, 
-            int skipCount = 0, 
+            string sorting = null,
+            int maxResultCount = int.MaxValue,
+            int skipCount = 0,
             bool includeDetails = true,
             CancellationToken cancellationToken = default)
         {
@@ -57,8 +57,8 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
         public async Task<List<IdentityRole>> GetListByOrganizationUnitIdAsync(
             Guid organizationUnitId,
             int maxResultCount = int.MaxValue,
-            int skipCount = 0, 
-            string filter =null,CancellationToken cancellationToken = default)
+            int skipCount = 0,
+            string filter = null, CancellationToken cancellationToken = default)
         {
             var query = GetRolesQuerableByOrganizationUnitIdAsync(organizationUnitId, filter);
 
@@ -72,13 +72,13 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
             var roleIdsInOrganizationUnit = DbContext.Set<OrganizationUnitRole>()
                 .Where(uou => uou.OrganizationUnitId == organizationUnitId)
                 .Select(uou => uou.RoleId);
-           return DbSet
-               .Where(u => !roleIdsInOrganizationUnit.Contains(u.Id))
-               .WhereIf(
-               !filter.IsNullOrWhiteSpace(),
-               u =>
-                   u.Name.Contains(filter)
-              );
+            return DbSet
+                .Where(u => !roleIdsInOrganizationUnit.Contains(u.Id))
+                .WhereIf(
+                !filter.IsNullOrWhiteSpace(),
+                u =>
+                    u.Name.Contains(filter)
+               );
 
         }
         public async Task<long> GetCountByOrganizationUnitIdAsync(Guid organizationUnitId, string filter = null, CancellationToken cancellationToken = default)

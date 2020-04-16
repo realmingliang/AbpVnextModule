@@ -32,6 +32,10 @@ export interface PageRequestDto {
   skipCount?: nunber;
   maxResultCount?: number;
 }
+export interface PagedResultDto<T>{
+  totalCount:number;
+  items:T[];
+}
 export namespace ApplicationConfiguration {
   export interface Response {
     localization: Localization;

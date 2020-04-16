@@ -1,45 +1,58 @@
-import React, { useRef, useState } from 'react';
-import { PageHeaderWrapper } from '@ant-design/pro-layout';
-import ProTable, { ActionType, ProColumns } from '@ant-design/pro-table';
-import { Button, Dropdown, Menu, Tag, message } from 'antd';
+import React, { useState } from 'react';
+import ProTable, { ProColumns } from '@ant-design/pro-table';
+import { Button, Dropdown, Menu, Tag } from 'antd';
 import { PlusOutlined, DownOutlined, SettingOutlined } from '@ant-design/icons';
 import PermissionManagement from '@/components/PermissionsManagement';
-import { useRequest } from '@umijs/hooks';
-import { IdentityRoleDto } from './data';
-import { queryRoles, getRole, deleteRole as deleteRoleItem } from './service';
+import { IdentityRoleDto, RoleQueryParams } from './data';
 import CreateOrUpdateForm from './components/createOrUpdateForm';
+import { IdentityRoleModelState, connect, ConnectProps } from 'umi';
+import { PagedResultDto } from '@/services/data';
+import { useEffect } from 'react';
+import { PaginationConfig } from 'antd/lib/pagination';
 
+interface IdentityRoleProps extends ConnectProps {
+  rolesResult: PagedResultDto<IdentityRoleDto>;
+  editRole:IdentityRoleDto;
+}
 
-const IdentityRole: React.FC = () => {
-  const actionRef = useRef<ActionType>();
+const IdentityRole: React.FC<IdentityRoleProps> = ({ dispatch, rolesResult,editRole }) => {
   const [roleName, handleRoleName] = useState<string>('');
-  const [editRole, handleEditRole] = useState<IdentityRoleDto | undefined>(undefined);
   const [modalVisible, handleModalVisible] = useState<boolean>(false);
   const [permissionModalVisible, handlePermissionModalVisible] = useState<boolean>(false);
-  const getEditRole = (id: string) => getRole(id);
-  const deleteRole = (id: string) => deleteRoleItem(id);
-  const { run: runDeleteRole } = useRequest(deleteRole, {
-    manual: true,
-    onSuccess: async result => {
-      if (!result.ok)
-        return;
-      message.success("删除成功!")
-    }
-  })
-  // 重新获取表格数据
-  const tableReload = () => {
-    actionRef.current!.reload();
+  const defaultRequestParams: RoleQueryParams = {
+    skipCount: 0,
+    maxResultCount: 10,
+    filter: "",
+    sorting: "",
+  };
+  const [requestParams, setRequestParams] = useState<RoleQueryParams>(defaultRequestParams);
+
+  useEffect(() => {
+    dispatch!({
+      type: 'identityRole/getRoles',
+      payload: requestParams
+    })
+  }, [requestParams])
+  const handleTableChange = async (params: PaginationConfig) => {
+    await setRequestParams(
+      { ...requestParams, skipCount: (params.current! - 1) * params.pageSize!, maxResultCount: params.pageSize }
+    )
+
   }
 
-  const { run: runGetEditRole } = useRequest(getEditRole, {
-    manual: true,
-    onSuccess: async result => {
-      if (result) {
-        await handleEditRole(result);
-        tableReload();
-      }
-    }
-  })
+  const deleteRole=(id: string)=>{
+    dispatch!({
+      type: 'identityRole/deleteRole',
+      payload: id
+    })
+  }
+  const getEditRole = async (id: string) => {
+    await dispatch!({
+      type: 'identityRole/getRole',
+      payload: id
+    })
+  };
+
   /**
  * 编辑角色权限
  * @param name 角色名称
@@ -55,9 +68,12 @@ const IdentityRole: React.FC = () => {
   */
   const openCreateOrUpdateModal = async (id: string | null = null) => {
     if (id === null) {
-      await handleEditRole(undefined);
+      await dispatch!({
+        type:"identityRole/saveEditRole",
+        payload:undefined,
+      })
     } else {
-      await runGetEditRole(id!);
+      await getEditRole(id!);
     }
     await handleModalVisible(true);
   }
@@ -72,7 +88,7 @@ const IdentityRole: React.FC = () => {
             >
               <Menu.Item key="edit" onClick={() => openCreateOrUpdateModal(record.id)}>编辑</Menu.Item>
               <Menu.Item key="approval" onClick={() => openPermissionModal(record.name)}>权限</Menu.Item>
-              <Menu.Item key="remove" onClick={() => runDeleteRole(record.id)}>删除</Menu.Item>
+              <Menu.Item key="remove" onClick={() => deleteRole(record.id)}>删除</Menu.Item>
             </Menu>
           }
         >
@@ -90,27 +106,19 @@ const IdentityRole: React.FC = () => {
     },
   ]
   return (
-    <PageHeaderWrapper>
+    <>
       <ProTable<IdentityRoleDto>
-        headerTitle="用户信息"
-        actionRef={actionRef}
+        headerTitle="角色信息"
         search={false}
+        onChange={handleTableChange}
         rowKey="id"
         toolBarRender={() => [
           <Button onClick={() => openCreateOrUpdateModal()} icon={<PlusOutlined />} type="primary" >
             新建
           </Button>
         ]}
-        request={async (params = {}) => {
-          const response = await queryRoles({ skipCount: (params.current! - 1) * params.pageSize!, maxResultCount: params.pageSize });
-          const data = response.items;
-          return {
-            data,
-            page: params.current,
-            success: true,
-            total: data.totalCount,
-          }
-        }}
+        pagination={{ total: rolesResult.totalCount, pageSize: 10 }}
+        dataSource={rolesResult.items}
         columns={columns}
       />
       <PermissionManagement
@@ -123,7 +131,21 @@ const IdentityRole: React.FC = () => {
         editRole={editRole}
         visible={modalVisible}
         onCancel={() => handleModalVisible(false)} />
-    </PageHeaderWrapper>
+    </>
   );
 }
-export default IdentityRole;
+export default connect(
+  ({
+    identityRole: { rolesResult,editRole },
+  }: {
+    identityRole: IdentityRoleModelState;
+    loading: {
+      effects: {
+        [key: string]: boolean;
+      };
+    };
+  }) => ({
+    rolesResult,
+    editRole
+  }),
+)(IdentityRole);

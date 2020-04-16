@@ -7,6 +7,8 @@ import classNames from 'classnames';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';
 import Store from "../../utils/store";
+import IconFont from '../IconFont';
+import { formatterFlagIcon } from '@/utils/utils';
 
 interface SelectLangProps {
   className?: string;
@@ -24,9 +26,7 @@ const SelectLang: React.FC<SelectLangProps> = props => {
     <Menu className={styles.menu} selectedKeys={[localization.currentCulture.cultureName]} onClick={changeLang}>
       {localization?.languages.map(locale => (
         <Menu.Item key={locale.cultureName}>
-          <span role="img" aria-label={locale.displayName}>
-            {locale.flagIcon}
-          </span>{' '}
+        <IconFont type={formatterFlagIcon(locale.cultureName)} />
           {locale.displayName}
         </Menu.Item>
       ))}

@@ -1,9 +1,10 @@
 import React from "react";
 import Modal from "antd/lib/modal/Modal";
 import { Tabs, Form, Checkbox, Input, Button } from "antd";
-import { connect, Dispatch } from "dva";
+import { connect } from "dva";
 import { IdentityUserCreateOrUpdateDto } from "../data";
 import { IdentityRoleDto } from "../../identityrole/data";
+import { Dispatch, useLocale } from "umi";
 
 const { TabPane } = Tabs;
 interface CreateOrUpdateFormProps {
@@ -18,6 +19,8 @@ interface CreateOrUpdateFormProps {
 const CreateOrUpdateForm: React.FC<CreateOrUpdateFormProps> = props => {
   const { modalVisible, onCancel, formValues, allRoles, dispatch, onSubmit } = props;
   const options = allRoles?.map(item => ({ label: item.name, value: item.name }))
+  const intl = useLocale("AbpIdentity");
+
   /**
    * modal确认按钮处理
    */
@@ -42,7 +45,7 @@ const CreateOrUpdateForm: React.FC<CreateOrUpdateFormProps> = props => {
 
   return (
     <Modal
-      title={formValues?.id === undefined ? '新增用户' : `编辑用户:${formValues.name}`}
+      title={formValues?.id === undefined ? intl("NewUser") : `${intl("Edit")}:${formValues.name}`}
       onCancel={onCancel}
       destroyOnClose
       footer={null}
@@ -52,7 +55,7 @@ const CreateOrUpdateForm: React.FC<CreateOrUpdateFormProps> = props => {
         onFinish={handleFormonFinish}
         initialValues={formValues}
       ><Tabs>
-          <TabPane tab='用户' key='User'>
+          <TabPane tab={intl("Users")} key='User'>
             <Form.Item name="userName" label="用户名"
               rules={[{
                 required: true,

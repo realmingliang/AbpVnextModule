@@ -1,55 +1,49 @@
 
 import React, { useRef, useState } from 'react';
-import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import ProTable, { ActionType, ProColumns } from '@ant-design/pro-table';
 import { PlusOutlined, DownOutlined, SettingOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Dropdown, Menu, Modal } from 'antd';
-import { Dispatch } from 'redux';
 import { connect } from 'dva';
-import { ConnectState } from '@/models/connect';
-import check from '@/components/Authorized/CheckPermissions';
-import Permissions from '@/utils/permissions';
 import PermissionManagement from '@/components/PermissionsManagement';
-import { GetPermissionListResultDto } from '@/services/data';
-import { useRequest } from '@umijs/hooks';
-import { IdentityUserDto, IdentityUserCreateOrUpdateDto, IdentityUserClaimDto } from './data';
-import { queryUsers, getUserClaimTypes } from './service';
+import { IdentityUserDto, IdentityUserCreateOrUpdateDto } from './data';
 import CreateOrUpdateForm from './components/createOrUpdateForm';
 import { IdentityRoleDto } from '../identityrole/data';
-import UpdateClaimTypesModal from './components/updateClaimTypesModal';
+import { IdentityUserModelState } from './model';
+import { Access, useAccess, ConnectProps } from 'umi';
+import AbpIdentityUser from './permissionName';
+import { useLocale } from 'umi';
+import { useEffect } from 'react';
+import { PagedResultDto } from '@/services/data';
 
 const { confirm } = Modal;
-interface IdentityUserProps {
-  dispatch: Dispatch;
+interface IdentityUserProps extends ConnectProps{
   createOrUpdateUser?: IdentityUserCreateOrUpdateDto;
   allRoles: IdentityRoleDto[];
-  permissions: GetPermissionListResultDto;
+  usersResult:PagedResultDto<IdentityUserDto>
 }
 
-const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createOrUpdateUser, permissions }) => {
+const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, usersResult,createOrUpdateUser }) => {
 
+  const access = useAccess();
+  const intl = useLocale("AbpIdentity");
   const actionRef = useRef<ActionType>();
   const [modalVisible, handleModalVisible] = useState<boolean>(false);
-  const [claimsModalVisible, handleClaimsModalVisible] = useState<boolean>(false);
-  const [userClaimTypes, setUserClaimTypes] = useState<IdentityUserClaimDto[]>([]);
   const [userId, handleUserId] = useState<string>("")
   const [permissionModalVisible, handlePermissionModalVisible] = useState<boolean>(false);
-  const {run:doGetUserClaimTypes} =useRequest(getUserClaimTypes,{
-    manual:true,
-    onSuccess:(result)=>{
-      setUserClaimTypes(result);
-      handleClaimsModalVisible(true);
-    }
-  })
+  useEffect(()=>{
+    dispatch!({
+      type: 'identityUser/getUsers',
+    })
+  },[])
   /**
    * 编辑或新增用户
    * @param id 用户id
    */
   const handleEditOrAdd = async (id: string | null = null) => {
-    await dispatch({
+    await dispatch!({
       type: 'identityUser/getRoles',
     })
-    await dispatch({
+    await dispatch!({
       type: 'identityUser/getUser',
       payload: id
     })
@@ -67,14 +61,14 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
    * 删除用户
    * @param id 用户名称
    */
-  const handlDeleteUser = async (id: string) => {
+  const handlDeleteUser = async (record: IdentityUserDto) => {
     confirm({
-      title: '确认删除此用户吗?',
+      title: intl("UserDeletionConfirmationMessage", [record.userName]),
       icon: <ExclamationCircleOutlined />,
       onOk() {
-        dispatch({
+        dispatch!({
           type: 'identityUser/deleteUser',
-          payload: id,
+          payload: record.id,
         });
         actionRef.current!.reload();
       },
@@ -84,13 +78,9 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
     });
   };
 
-  const handleUpdateUserClaimModalOpen=(id:string)=>{
-
-    doGetUserClaimTypes(id);
-  }
   const columns: ProColumns<IdentityUserDto>[] = [
     {
-      title: '操作',
+      title: intl("Actions"),
       render: (_, record) =>
         <Dropdown
           overlay={
@@ -98,53 +88,50 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
               selectedKeys={[]}
             >
               {
-                check(Permissions.AbpIdentity.Users.Create, <Menu.Item onClick={() => { handleEditOrAdd(record.id) }} key="edit">编辑</Menu.Item>, null)
+                access[AbpIdentityUser.Update] ? <Menu.Item onClick={() => { handleEditOrAdd(record.id) }} key="edit">编辑</Menu.Item> : null
               }
-               <Menu.Item key="claims" onClick={() => handleUpdateUserClaimModalOpen(record.id)}>声明</Menu.Item>
-              <Menu.Item key="approval" onClick={() => openPermissionModal(record.id)}>权限</Menu.Item>
-              <Menu.Item key="remove" onClick={() => handlDeleteUser(record.id)}>删除</Menu.Item>
+              {
+                access[AbpIdentityUser.ManagePermissions] ? <Menu.Item key="approval" onClick={() => openPermissionModal(record.id)}>权限</Menu.Item> : null
+              }
+              {
+                access[AbpIdentityUser.Delete] ? <Menu.Item key="remove" onClick={() => handlDeleteUser(record)}>删除</Menu.Item> : null
+              }
             </Menu>
           }
         >
           <Button type="primary">
-            <SettingOutlined /> 操作 <DownOutlined />
+            <SettingOutlined /> {intl("Actions")} <DownOutlined />
           </Button>
         </Dropdown>
 
     },
     {
-      title: '用户名',
+      title: intl("UserName"),
       dataIndex: 'name',
     }, {
-      title: '邮箱地址',
+      title: intl("EmailAddress"),
       dataIndex: 'email',
     }, {
-      title: '手机号',
+      title: intl("PhoneNumber"),
       dataIndex: 'phoneNumber',
     },
   ]
   return (
-    <PageHeaderWrapper>
+    <>
       <ProTable<IdentityUserDto>
-        headerTitle="用户信息"
+        headerTitle={intl("Users")}
         actionRef={actionRef}
         search={false}
         rowKey="id"
         toolBarRender={() => [
-          <Button icon={<PlusOutlined />} onClick={() => handleEditOrAdd()} type="primary" >
-            新建
-        </Button>
+          <Access accessible={access[AbpIdentityUser.Create]}>
+            <Button icon={<PlusOutlined />} onClick={() => handleEditOrAdd()} type="primary" >
+              {intl("NewUser")}
+            </Button>
+          </Access>
         ]}
-        request={async (params = {}) => {
-          const response = await queryUsers({ skipCount: (params.current! - 1) * params.pageSize!, maxResultCount: params.pageSize });
-          const data = response.items;
-          return {
-            data,
-            page: params.current,
-            success: true,
-            total: data.totalCount,
-          }
-        }}
+        pagination={{ total: usersResult.totalCount, pageSize: 10 }}
+        dataSource={usersResult.items}
         columns={columns}
       />
       <CreateOrUpdateForm
@@ -160,16 +147,24 @@ const IdentityUser: React.FC<IdentityUserProps> = ({ dispatch, allRoles, createO
         onCancel={() => handlePermissionModalVisible(false)}
         modalVisible={permissionModalVisible}
       />
-      <UpdateClaimTypesModal
-      claimTypes={userClaimTypes}
-      onCancel={()=>handleClaimsModalVisible(false)}
-      visible={claimsModalVisible}  />
-    </PageHeaderWrapper>
+    </>
 
   )
 }
-
-export default connect(({ identityUser }: ConnectState) => ({
-  allRoles: identityUser.allRoles,
-  createOrUpdateUser: identityUser.createOrUpdateUser,
-}))(IdentityUser);
+export default connect(
+  ({
+    identityUser: { allRoles,createOrUpdateUser,usersResult },
+    loading,
+  }: {
+    identityUser: IdentityUserModelState;
+    loading: {
+      effects: {
+        [key: string]: boolean;
+      };
+    };
+  }) => ({
+    allRoles,
+    usersResult,
+    createOrUpdateUser
+  }),
+)(IdentityUser);

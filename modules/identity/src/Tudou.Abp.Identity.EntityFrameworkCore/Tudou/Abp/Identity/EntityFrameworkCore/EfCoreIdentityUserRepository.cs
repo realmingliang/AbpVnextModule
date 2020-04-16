@@ -30,7 +30,7 @@ namespace Tudou.Abp.Identity.EntityFrameworkCore
                     GetCancellationToken(cancellationToken)
                 );
         }
-
+        
         public virtual async Task<List<string>> GetRoleNamesAsync(
             Guid id, 
             CancellationToken cancellationToken = default)

@@ -21,10 +21,10 @@ export async function createRole(data:IdentityRoleDto): Promise<any> {
   });
 }
 
-export async function updateRole(id:string,data:IdentityRoleUpdateDto): Promise<any> {
-  return request(`api/identity/roles/${id}`, {
+export async function updateRole(input:{id:string,data:IdentityRoleUpdateDto}): Promise<any> {
+  return request(`api/identity/roles/${input.id}`, {
     method: 'PUT',
-    data,
+    data:input.data,
   });
 }
 

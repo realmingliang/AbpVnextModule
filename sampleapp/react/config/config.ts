@@ -1,6 +1,6 @@
 // https://umijs.org/config/
 import { defineConfig, utils } from 'umi';
-import aliyunTheme from '@ant-design/aliyun-theme'
+import aliyunTheme from '@ant-design/aliyun-theme';
 import proxy from './proxy';
 import webpackPlugin from './plugin.config';
 const { winPath } = utils; // preview.pro.ant.design only do not use in your production ;
@@ -119,9 +119,29 @@ export default defineConfig({
                   ],
                 },
                 {
+                  name: 'language-management',
+                  path: '/admin/language-management',
+                  authority: ['Language-Management'],
+                  icon: 'smile',
+                  routes: [
+                    {
+                      name: 'language',
+                      icon: 'smile',
+                      path: '/admin/language-management/language',
+                      component: './admin/localization/language',
+                    },
+                    {
+                      name: 'languageTexts',
+                      icon: 'smile',
+                      path: '/admin/language-management/languagetext',
+                      component: './admin/localization/languagetext',
+                    },
+                  ],
+                },
+
+                {
                   path: '/admin/auditlogging',
                   name: '审计日志',
-
                   icon: 'audit',
                   component: './admin/auditlog',
                 },
@@ -132,6 +152,7 @@ export default defineConfig({
                   icon: 'setting',
                   component: './admin/settings',
                 },
+
               ],
             },
             {
@@ -141,13 +162,11 @@ export default defineConfig({
               path: '/accountsettings',
               component: './common/AccountSettings',
             },
-
             {
               component: './404',
             },
           ],
         },
-
         {
           component: './404',
         },

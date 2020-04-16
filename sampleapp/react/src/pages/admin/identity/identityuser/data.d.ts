@@ -23,12 +23,6 @@ export interface IdentityUserDto {
   id:string
 }
 
-export interface IdentityUserClaimDto{
-  userId:string;
-  claimType:string;
-  claimValue:string;
-}
-
 export interface UserQueryParams extends PageRequestDto {
   filter?: string;
   sorting?: string;

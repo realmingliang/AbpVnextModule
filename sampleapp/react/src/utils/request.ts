@@ -34,7 +34,6 @@ const errorHandler = (error: { response: Response }): Response => {
   if (response && response.status) {
     const errorText = codeMessage[response.status] || response.statusText;
     const { status, url } = response;
-
     notification.error({
       message: `请求错误 ${status}: ${url}`,
       description: errorText,
@@ -91,5 +90,30 @@ request.interceptors.request.use((url, options) => {
     }
   );
 });
+request.interceptors.response.use(async response => {
+  const { ok } = response;
+  if (!ok) {
+    const res = await response.clone().json();
+    if (res.error&&res.error.message&&res.error.details) {
+      notification.error({
+        message: res.error.message,
+        description:res.error.details
+      })
+      return res;
+    } else if (res.error&&res.error.message){
+      notification.error({
+        message: res.error.message,
+      })
+      return res;
+    } else if (res.error){
+      notification.error({
+        message: res.error,
+      })
+      return res;
+    }
+    return res;
+  }
 
+  return response;
+})
 export default request;

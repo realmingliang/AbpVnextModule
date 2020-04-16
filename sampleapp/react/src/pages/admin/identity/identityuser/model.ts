@@ -2,13 +2,16 @@
 import { Effect } from 'dva';
 import { Reducer } from 'redux';
 import { IdentityUserCreateOrUpdateDto } from './data';
-import { getUserRoles, createUser, updateUser, getUser, deleteUser } from './service';
+import { getUserRoles, createUser, updateUser, getUser, deleteUser, queryUsers } from './service';
 import { IdentityRoleDto } from '../identityrole/data';
 import { queryRoles } from '../identityrole/service';
+import { PagedResultDto } from '@/services/data';
+import { IdentityUserDto } from './data.d';
 
 
 
 export interface IdentityUserModelState {
+  usersResult:PagedResultDto<IdentityUserDto>
   allRoles: IdentityRoleDto[];
   createOrUpdateUser?: IdentityUserCreateOrUpdateDto;
 }
@@ -18,12 +21,14 @@ export interface IdentityUserModelType {
   state: IdentityUserModelState;
   effects: {
     getRoles: Effect;
+    getUsers:Effect;
     getUser: Effect;
     createUser: Effect;
     updateUser: Effect;
     deleteUser: Effect;
   };
   reducers: {
+    saveUsers: Reducer<IdentityUserModelState>;
     saveRoles: Reducer<IdentityUserModelState>;
     saveCreateOrUpdateUser: Reducer<IdentityUserModelState>;
   };
@@ -33,11 +38,19 @@ const RoleModel: IdentityUserModelType = {
   namespace: 'identityUser',
 
   state: {
+    usersResult:{totalCount:0,items:[]},
     allRoles: [],
     createOrUpdateUser: {},
   },
 
   effects: {
+    *getUsers({ payload }, { call, put }) {
+      const response = yield call(queryUsers, payload);
+      yield put({
+        type: 'saveUsers',
+        payload: response,
+      })
+    },
     *getRoles({ payload }, { call, put }) {
       const response = yield call(queryRoles, payload);
       yield put({
@@ -72,15 +85,24 @@ const RoleModel: IdentityUserModelType = {
     },
   },
   reducers: {
-    saveRoles(state = { allRoles: [] }, { payload }) {
+    saveUsers(state, { payload }) {
       return {
         ...state,
+        usersResult:payload,
+        allRoles: []
+      };
+    },
+    saveRoles(state, { payload }) {
+      return {
+        ...state,
+        usersResult:state!.usersResult,
         allRoles: payload
       };
     },
-    saveCreateOrUpdateUser(state = { allRoles: [] }, { payload }) {
+    saveCreateOrUpdateUser(state, { payload }) {
       return {
         ...state,
+        usersResult:state!.usersResult,
         allRoles: state!.allRoles,
         createOrUpdateUser: payload
       };

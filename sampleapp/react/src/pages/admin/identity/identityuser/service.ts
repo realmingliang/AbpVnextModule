@@ -34,8 +34,3 @@ export async function deleteUser(id:string): Promise<any> {
   });
 }
 
-export async function getUserClaimTypes(id:string): Promise<any> {
-  return request(`api/identity/users/${id}/claims`,{
-    method:'GET',
-  });
-}
