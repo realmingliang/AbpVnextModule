@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.Identity.Domain\Tudou.Abp.Identity.Domain.csproj" />
-    <PackageReference Include="Volo.Abp.Users.EntityFrameworkCore" Version="2.4.0"></PackageReference>
+    <PackageReference Include="Volo.Abp.Users.EntityFrameworkCore" Version="2.6.0"></PackageReference>
   </ItemGroup>
 
   <ItemGroup>

@@ -20,7 +20,7 @@
 
   <ItemGroup>
     
-    <PackageReference Include="Volo.Abp.Localization" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Localization" Version="2.6.0" />
     <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.Domain.Shared\Tudou.Abp.Identity.Domain.Shared.csproj" />
 
   </ItemGroup>

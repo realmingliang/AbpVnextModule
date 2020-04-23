@@ -15,8 +15,8 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.AuditLogging.Domain.Shared\Tudou.Abp.AuditLogging.Domain.Shared.csproj" />
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.4.0" />
-    <PackageReference Include="Volo.Abp.Auditing" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="2.6.0" />
+    <PackageReference Include="Volo.Abp.Auditing" Version="2.6.0" />
   </ItemGroup>
   
   <ItemGroup>

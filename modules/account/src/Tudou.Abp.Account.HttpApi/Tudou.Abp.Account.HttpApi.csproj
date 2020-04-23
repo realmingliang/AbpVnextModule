@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.Domain\Tudou.Abp.Identity.Domain.csproj" />
     <ProjectReference Include="..\Tudou.Abp.Account.Application.Contracts\Tudou.Abp.Account.Application.Contracts.csproj" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.6.0" />
     <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.HttpApi\Tudou.Abp.Identity.HttpApi.csproj" />
   </ItemGroup>
 

@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.Saas.Application.Contracts\Tudou.Abp.Saas.Application.Contracts.csproj" />
-    <PackageReference Include="Volo.Abp.Http.Client" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Http.Client" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>

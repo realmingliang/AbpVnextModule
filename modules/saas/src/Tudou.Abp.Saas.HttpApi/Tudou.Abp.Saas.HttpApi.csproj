@@ -19,8 +19,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.Saas.Application.Contracts\Tudou.Abp.Saas.Application.Contracts.csproj" />
 
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.4.0" />
-    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.6.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>

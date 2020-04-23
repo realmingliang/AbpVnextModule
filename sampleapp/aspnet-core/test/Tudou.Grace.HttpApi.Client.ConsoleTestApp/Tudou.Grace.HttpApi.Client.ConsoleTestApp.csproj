@@ -17,12 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="2.6.0" />
     <ProjectReference Include="..\..\src\Tudou.Grace.HttpApi.Client\Tudou.Grace.HttpApi.Client.csproj" />
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.2.20160.3" />
   </ItemGroup>
 
 </Project>

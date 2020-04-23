@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.AuditLogging.Domain\Tudou.Abp.AuditLogging.Domain.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>

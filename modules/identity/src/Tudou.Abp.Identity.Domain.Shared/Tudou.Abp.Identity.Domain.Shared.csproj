@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Users.Domain.Shared" Version="2.4.0"></PackageReference>
-    <PackageReference Include="Volo.Abp.Validation" Version="2.4.0"></PackageReference>
+    <PackageReference Include="Volo.Abp.Users.Domain.Shared" Version="2.6.0"></PackageReference>
+    <PackageReference Include="Volo.Abp.Validation" Version="2.6.0"></PackageReference>
   </ItemGroup>
 
   <ItemGroup>

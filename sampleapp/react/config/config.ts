@@ -106,6 +106,7 @@ export default defineConfig({
                       path: '/admin/identity/identityclaimtype',
                       name: '声明类型',
                       authority: ['AbpIdentity.Roles'],
+                      authority: ['AbpSaas.Tenants.ss'],
                       icon: 'safety',
                       component: './admin/identity/identityclaimtype',
                     },
@@ -121,7 +122,7 @@ export default defineConfig({
                 {
                   name: 'language-management',
                   path: '/admin/language-management',
-                  authority: ['Language-Management'],
+                  authority: ['AbpSaas.Tenants.ss'],
                   icon: 'smile',
                   routes: [
                     {

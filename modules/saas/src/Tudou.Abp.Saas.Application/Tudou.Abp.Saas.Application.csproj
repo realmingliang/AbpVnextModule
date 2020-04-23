@@ -17,7 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Tudou.Abp.Saas.Application.Contracts\Tudou.Abp.Saas.Application.Contracts.csproj" />
     <ProjectReference Include="..\Tudou.Abp.Saas.Domain\Tudou.Abp.Saas.Domain.csproj" />
-    <PackageReference Include="Volo.Abp.UI" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.UI" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>

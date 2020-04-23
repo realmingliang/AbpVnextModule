@@ -34,8 +34,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="2.4.0" />
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.4.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="2.6.0" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="2.6.0" />
     <ProjectReference Include="..\..\..\identityserver\src\Tudou.Abp.IdentityServer.Domain\Tudou.Abp.IdentityServer.Domain.csproj" />
     <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.AspNetCore\Tudou.Abp.Identity.AspNetCore.csproj" />
     <ProjectReference Include="..\Tudou.Abp.Account.HttpApi\Tudou.Abp.Account.HttpApi.csproj" />
