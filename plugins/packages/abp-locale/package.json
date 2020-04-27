@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-abp-locale",
-  "version": "2.4.4",
+  "version": "2.4.7",
   "description": "locale",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

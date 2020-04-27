@@ -54,7 +54,7 @@ const Login: React.FC<LoginProps> = props => {
         multiTenancy?.isEnabled ? <TenantsSelect /> : null
       }
       <LoginFrom activeKey='account' onSubmit={handleSubmit}>
-        <Tab key="account" >
+        <Tab key="account" tab="" >
           {status === 'error' && !submitting && (
             <LoginMessage content={intl("InvalidUserNameOrPassword")} />
           )}

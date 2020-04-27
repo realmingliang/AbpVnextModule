@@ -1,6 +1,6 @@
 {
   "name": "umi-preset-abp-react",
-  "version": "2.4.5",
+  "version": "2.4.7",
   "description": "react",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "@umijs/plugin-access": "2.3.0",
-    "umi-plugin-abp-locale": "2.4.4",
-    "umi-plugin-abp-feature": "2.4.3",
-    "umi-plugin-abp-setting": "2.4.3",
+    "umi-plugin-abp-locale": "2.4.7",
+    "umi-plugin-abp-feature": "2.4.7",
+    "umi-plugin-abp-setting": "2.4.7",
     "@umijs/plugin-analytics": "0.2.0",
     "@umijs/plugin-antd": "0.4.3",
     "@umijs/plugin-crossorigin": "1.1.0",

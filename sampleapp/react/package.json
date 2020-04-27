@@ -108,7 +108,7 @@
     "pro-download": "1.0.1",
     "puppeteer-core": "^2.1.1",
     "stylelint": "^13.0.0",
-    "umi-preset-abp-react": "^2.4.5"
+    "umi-preset-abp-react": "^2.4.7"
   },
   "optionalDependencies": {
     "puppeteer": "^2.0.0"

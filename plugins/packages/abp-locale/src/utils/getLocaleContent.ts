@@ -9,7 +9,7 @@ import LocaleContext from './context';
 export const useLocale = (source:string) => {
   const locale = useContext(LocaleContext);
   if(locale[source]===undefined){
-    throw new Error('source is not exist')
+    return "SourceNotExist"
   }
   return L;
   function L(key:string,args:any[]=[]){
