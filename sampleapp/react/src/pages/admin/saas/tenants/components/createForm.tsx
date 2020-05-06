@@ -30,7 +30,7 @@ const CreateForm: React.FC<CreateFormProps> = props => {
     })
   }
   return (
-    <Modal title="新增租户" onOk={handleOK} onCancel={onCancel} visible={visible}>
+    <Modal title="新增租户" forceRender onOk={handleOK} onCancel={onCancel} visible={visible}>
       <Form layout="vertical" form={form} name="create_tenant">
         <Form.Item
           label="租户名称"
