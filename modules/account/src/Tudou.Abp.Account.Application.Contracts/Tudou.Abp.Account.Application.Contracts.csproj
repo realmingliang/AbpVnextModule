@@ -18,7 +18,7 @@
     <ProjectReference Include="..\..\..\identity\src\Tudou.Abp.Identity.Application.Contracts\Tudou.Abp.Identity.Application.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Fody" Version="6.1.1">
+    <PackageReference Update="Fody" Version="6.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
