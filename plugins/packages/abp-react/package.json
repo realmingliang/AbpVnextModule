@@ -30,7 +30,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@umijs/plugin-access": "2.3.0",
+    "@umijs/plugin-access": "2.4.1",
     "umi-plugin-abp-locale": "2.4.7",
     "umi-plugin-abp-feature": "2.4.7",
     "umi-plugin-abp-setting": "2.4.7",
