@@ -38,7 +38,7 @@
     "@umijs/plugin-antd": "0.4.3",
     "@umijs/plugin-crossorigin": "1.1.0",
     "@umijs/plugin-dva": "0.6.5",
-    "@umijs/plugin-initial-state": "2.2.0",
+    "@umijs/plugin-initial-state": "2.3.1",
     "@umijs/plugin-layout": "0.7.0",
     "@umijs/plugin-model": "2.2.0",
     "@umijs/plugin-request": "2.3.2",
