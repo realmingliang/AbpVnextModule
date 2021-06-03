@@ -35,7 +35,7 @@
     "umi-plugin-abp-feature": "2.4.7",
     "umi-plugin-abp-setting": "2.4.7",
     "@umijs/plugin-analytics": "0.2.0",
-    "@umijs/plugin-antd": "0.4.3",
+    "@umijs/plugin-antd": "0.9.2",
     "@umijs/plugin-crossorigin": "1.1.0",
     "@umijs/plugin-dva": "0.6.5",
     "@umijs/plugin-initial-state": "2.2.0",
